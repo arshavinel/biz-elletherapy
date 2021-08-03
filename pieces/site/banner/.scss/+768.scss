@@ -1,0 +1,39 @@
+.section-banner {
+    min-height: 250px;
+    height: 250px; // as backup if 'vh' doesn't work
+    height: 100vh;
+    max-height: 1000px;
+
+    &.section-banner--with-text {
+        > .overlay {
+            > .container {
+                h1.sentence {
+                    margin-bottom: 40px;
+                }
+                p.tag {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &.section-banner--half {
+        min-height: 125px;
+        height: 125px; // as backup if 'vh' doesn't work
+        height: 50vh;
+        max-height: 500px;
+
+        &.section-banner--with-text {
+            > .overlay {
+                > .container {
+                    h1.sentence {
+                        margin-bottom: 20px;
+                    }
+                    p.tag {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

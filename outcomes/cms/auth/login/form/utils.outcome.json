@@ -1,0 +1,17 @@
+{
+    "layout": "cms/login",
+    "scss": {
+        "paths": [],
+        "vars": {}
+    },
+    "js": {
+        "routes": {
+            "groups": [
+                "site"
+            ],
+            "exceptions": []
+        },
+        "header": [],
+        "footer": []
+    }
+}

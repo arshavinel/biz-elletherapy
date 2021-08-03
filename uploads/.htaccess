@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule ^ ../download.php [END,L]

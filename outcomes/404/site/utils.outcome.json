@@ -1,0 +1,15 @@
+{
+    "layout": "site",
+    "scss": {
+        "paths": [],
+        "vars": {}
+    },
+    "js":{
+        "routes": {
+            "groups": [],
+            "exceptions": []
+        },
+        "header": [],
+        "footer": []
+    }
+}

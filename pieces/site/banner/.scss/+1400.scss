@@ -1,0 +1,13 @@
+.section-banner {
+    min-height: 1000px;
+    height: 1000px; // as backup if 'vh' doesn't work
+    height: 100vh;
+    max-height: 1500px;
+
+    &.section-banner--half {
+        min-height: 600px;
+        height: 600px; // as backup if 'vh' doesn't work
+        height: 50vh;
+        max-height: 1000px;
+    }
+}

@@ -1,0 +1,6 @@
+{
+	"cms":  ["GET", "cms/[path:->]"],
+	"site": ["GET", "[path:->]"],
+
+	"maintenance":	["GET", "mentenanta"]
+}

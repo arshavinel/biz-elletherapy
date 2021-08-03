@@ -1,0 +1,24 @@
+body {
+	padding-top: 0px;
+}
+
+#app {
+	#section--articles {
+		background-position: center;
+		background-repeat: no-repeat;
+		@include arsh--background-size(cover);
+
+		.image {
+			position: relative;
+			background-position: center;
+			background-repeat: no-repeat;
+			@include arsh--background-size(cover);
+
+			span {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+}

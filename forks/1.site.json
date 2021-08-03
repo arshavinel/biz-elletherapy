@@ -1,0 +1,48 @@
+{
+	"home":		["GET",	"/"],
+	"story":	["GET",	"povestea-mea"],
+	"blog": {
+		"all":	["GET",	"blog/[page]/"],
+		"show":	["GET",	"blog/articol/[id:i]/[slug:*]"]
+	},
+
+	"coaching": {
+		"info":		["GET",	"coaching/"],
+		"service":	["GET",	"coaching/serviciu/[id:i]/[slug:*]"]
+	},
+
+	"nlp":		["GET",	"nlp"],
+	"media":	["GET",	"media"],
+	"contact":	["GET",	"contact"],
+
+	"appoint":	["GET",	"programeaza-te"],
+
+	"legal": {
+		"terms":	["GET", "termeni-si-conditii"],
+		"privacy":	["GET", "politica-de-confidentialitate"],
+		"cookies":	["GET", "politica-de-cookies"]
+	},
+
+	"events": {
+		"promo": {
+			"raffle":	["GET", "event/[meeting:*]/tombola/[raffle:*]"],
+			"discount":	["GET", "event/[meeting:*]/reducere/[discount:*]"]
+		}
+	},
+
+	"ajax": {
+		"contact":	["AJAX", "jx/cntct"],
+		"appoint":	["AJAX", "jx/prgrmzt"],
+		"events": {
+			"promo": {
+				"raffle": {
+					"join":	["AJAX", "jx/vnts/prm/rffl/jn"],
+					"pick":	["AJAX", "jx/vnts/prm/rffl/pck"]
+				},
+				"discount": {
+					"join":	["AJAX", "jx/vnts/prm/dscnt/jn"]
+				}
+			}
+		}
+	}
+}

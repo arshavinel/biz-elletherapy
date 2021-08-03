@@ -1,0 +1,5 @@
+[28-Jul-2021 09:00:01 Europe/Bucharest] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/r79575iscr/work.iscreambrands.ro/melena/crons/appointments/new.php on line 13
+[29-Jul-2021 09:00:01 Europe/Bucharest] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/r79575iscr/work.iscreambrands.ro/melena/crons/appointments/new.php on line 13
+[30-Jul-2021 09:00:01 Europe/Bucharest] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/r79575iscr/work.iscreambrands.ro/melena/crons/appointments/new.php on line 13
+[31-Jul-2021 09:00:01 Europe/Bucharest] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/r79575iscr/work.iscreambrands.ro/melena/crons/appointments/new.php on line 13
+[01-Aug-2021 09:00:01 Europe/Bucharest] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/r79575iscr/work.iscreambrands.ro/melena/crons/appointments/new.php on line 13

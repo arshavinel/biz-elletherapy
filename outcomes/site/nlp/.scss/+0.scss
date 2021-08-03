@@ -1,0 +1,43 @@
+body {
+	padding-top: 0px;
+}
+
+#app {
+	#section--questions {
+		h2 {
+			font-size: 24px;
+		}
+		.bg-paper {
+			padding: 20px;
+			@include arsh--box-shadow(0px 0px 5px -2px #707070);
+			background-color: map-get($site-colors, 7);
+			position: relative;
+
+			&:before {
+				content: "";
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    width: 19px;
+			    height: 20px;
+			    background-color: map-get($site-colors, 6);
+			    @include arsh--box-shadow(0px 0px 10px -3px #707070);
+			    z-index: 1;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				margin-top: -4px;
+				top: 0;
+				right: -11px;
+				width: 30px;
+				height: 16px;
+				transform: rotate(45deg);
+				background-color: map-get($site-colors, 6);
+				@include arsh--box-shadow(inset 0px -6px 7px -9px #707070);
+				z-index: 1;
+				@include arsh--border-radius(10px 10px 0px 0px);
+			}
+		}
+	}
+}

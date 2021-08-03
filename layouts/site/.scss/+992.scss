@@ -1,0 +1,44 @@
+body {
+	padding-top: calc(89.55px + 15px);
+
+	#app {
+		min-height: calc(100vh - (89.55px + 15px + 69px));
+	}
+}
+
+nav.navbar {
+	li.nav-item {
+		white-space: nowrap;
+		margin-left: 25px;
+
+		a.nav-link {
+			position: relative;
+
+			&:not(.btn) {
+				text-shadow: 1px 1px map-get($site-colors, 4);
+
+				&::after {
+					content: '';
+					position: absolute;
+					width: 40%;
+					height: 2px;
+					left: 50%;
+					top: 30px;
+					opacity: 0;
+					background-color: map-get($site-colors, 7);
+					@include arsh--transform-origin(center center);
+					@include arsh--transform(translate(-50%, 0%));
+					@include arsh--animation(.3s ease normal forwards 1 pulse);
+				}
+
+				&.active,
+				&:focus,
+				&:hover {
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+#border {
+    border: 3px solid map-get($site-colors, 5);
+    border-color: map-get($site-colors, 5) !important;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    color: map-get($site-colors, 5);
+
+    table#header {
+        width: 100%;
+
+        td[align="right"] {
+            text-align: right;
+
+            a {
+                display: block;
+
+                img {
+                    border: 0;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 10px 0;
+    }
+
+    #footer {
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid map-get($site-colors, 5);
+
+        a {
+            font-size: 14px;
+            color: map-get($site-colors, 5);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+}

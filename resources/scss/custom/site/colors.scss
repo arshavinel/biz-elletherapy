@@ -1,0 +1,22 @@
+$site-colors: (
+    1: #ECB3C6, // lighter pink
+    2: #DD7596, // darker pink,
+    3: #B7C3F3, // lighter blue
+    4: #5A7BE5, // dark blue
+    5: #100F43, // darkest blue
+    6: #F7F7F4, // gray
+    7: #FFFFFF, // white
+    8: #707070  // dark
+) !default;
+
+@each $number, $color in $site-colors {
+	.bg-color-#{$number} {
+		background-color: $color;
+	}
+	.border-color-#{$number} {
+		border-color: $color !important;
+	}
+	.text-color-#{$number} {
+		color: $color;
+	}
+}

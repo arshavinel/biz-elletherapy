@@ -1,0 +1,71 @@
+nav.navbar {
+    .navbar-brand,
+    .navbar-toggler {
+        z-index: 3;
+    }
+    .navbar-nav {
+        background-color: map-get($site-colors, 3);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        height: 100vh;
+        padding-top: 100px;
+        font-size: 20px;
+        visibility: hidden;
+        opacity: 0;
+        @include arsh--transition(opacity 0.25s ease-in-out);
+
+        li.nav-item {
+            margin: 5px 0px;
+            text-align: center;
+
+            a.nav-link {
+                color: map-get($site-colors, 7);
+
+                &.active,
+                &:focus,
+                &:hover {
+                    color: map-get($site-colors, 2);
+
+                    &::after {
+    					opacity: 1;
+    				}
+                }
+
+                &.btn {
+                    padding: 7px 10px;
+                }
+            }
+        }
+    }
+
+    &.fixed {
+        .navbar-nav {
+            background-color: map-get($site-colors, 3);
+
+            li.nav-item {
+                a.nav-link {
+                    color: map-get($site-colors, 7);
+
+                    &.active,
+                    &:hover {
+                        color: map-get($site-colors, 5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+html.mobile-menu-visible {
+    &, body {
+        overflow: hidden;
+    }
+
+    nav.navbar .navbar-nav {
+        visibility: visible;
+        opacity: 1;
+    }
+}

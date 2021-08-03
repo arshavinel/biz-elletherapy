@@ -1,0 +1,17 @@
+{
+    "layout": "cms",
+    "scss": {
+        "paths": [],
+        "vars": {}
+    },
+    "js": {
+        "routes": {
+            "groups": [],
+            "exceptions": []
+        },
+        "header": [],
+        "footer": [
+            "plugins/clipboard"
+        ]
+    }
+}

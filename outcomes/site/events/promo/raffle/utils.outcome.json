@@ -1,0 +1,17 @@
+{
+    "layout": "site",
+    "scss": {
+        "paths": [],
+        "vars": {}
+    },
+    "js": {
+        "routes": {
+            "groups": [],
+            "exceptions": []
+        },
+        "header": [
+            "plugins/bootstrap-v4/tab"
+        ],
+        "footer": []
+    }
+}

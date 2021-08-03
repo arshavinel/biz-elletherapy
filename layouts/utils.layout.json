@@ -1,0 +1,33 @@
+{
+    "scss": {
+        "paths": [
+            "plugins/bootstrap",
+            "plugins/select",
+            "plugins/fontawesome",
+            "plugins/handmade/mixins",
+            "plugins/handmade/spacings",
+            "plugins/handmade/defaults",
+            "custom/global"
+        ],
+        "vars": {}
+    },
+    "js": {
+        "routes": {
+            "groups": [
+                "site"
+            ],
+            "exceptions": []
+        },
+        "header": [
+            "plugins/jquery",
+            "plugins/jquery-ui",
+            "plugins/popper",
+            "plugins/bootstrap-v4/index",
+            "plugins/bootstrap-v4/util",
+            "plugins/bootstrap-v4/dropdown",
+            "plugins/bootstrap-v4/collapse",
+            "custom/global"
+        ],
+        "footer": []
+    }
+}

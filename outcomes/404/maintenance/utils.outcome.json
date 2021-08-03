@@ -1,0 +1,17 @@
+{
+    "layout": "basic",
+    "scss": {
+        "paths": [
+            "custom/site/colors"
+        ],
+        "vars": {}
+    },
+    "js":{
+        "routes": {
+            "groups": [],
+            "exceptions": []
+        },
+        "header": [],
+        "footer": []
+    }
+}

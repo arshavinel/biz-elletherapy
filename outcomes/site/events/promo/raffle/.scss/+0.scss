@@ -1,0 +1,46 @@
+body {
+    padding-top: 0px;
+}
+
+#app {
+    #bg-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        @include arsh--background-size(cover);
+        color: map-get($site-colors, 7);
+
+        .container {
+            table {
+                min-height: calc(100vh - 116px);
+
+                td {
+                    padding-top: 80px;
+
+                    .nav.flex-column.nav-pills {
+                        position: fixed;
+                        right: 10px;
+                        top: 10px;
+                        z-index: 3; // being over header
+
+                        .nav-link {
+                            color: map-get($site-colors, 7);
+
+                            &:hover {
+                                background-color: #{map-get($site-colors, 2)}70;
+                            }
+                            &.active {
+                                background-color: map-get($site-colors, 2);
+                            }
+                        }
+                    }
+
+                    form {
+                        [data-response="message"] {
+                            @include arsh--opacity(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

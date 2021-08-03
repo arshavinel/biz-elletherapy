@@ -1,0 +1,95 @@
+body {
+	padding-top: calc(83.55px + 15px);
+	background-color: map-get($site-colors, 6);
+
+	#app {
+		min-height: calc(100vh - (83.55px + 15px + 69px));
+	}
+}
+
+nav.navbar {
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+	z-index: 2;
+	@include arsh--transition(all 0.35s);
+
+	.navbar-nav {
+		li.nav-item {
+			a.nav-link {
+				&.btn {
+					@include arsh--border-radius(10px);
+					background-color: map-get($site-colors, 7);
+					color: map-get($site-colors, 2);
+
+					&:hover,
+					&:focus,
+					&.active {
+						background-color: map-get($site-colors, 2);
+						color: map-get($site-colors, 7);
+					}
+				}
+			}
+		}
+	}
+
+	img {
+		height: 55.55px;
+
+		&.header-top {
+			height: 70px;
+		}
+	}
+
+	&.fixed {
+		// background-color: map-get($site-colors, 3);
+		@include arsh--linear-gradient-3params(to bottom, map-get($site-colors, 3), #{map-get($site-colors, 3)}99);
+		@include arsh--box-shadow(0px 0px 10px 0px #000);
+	}
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"] {
+	background:	white;
+	padding:	0 15px;
+	height:		45px;
+	font-size:	13px;
+	width:		100%;
+}
+
+footer {
+	background-color: map-get($site-colors, 5);
+	color: map-get($site-colors, 7);
+
+	a {
+		color: map-get($site-colors, 7);
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 40%;
+			height: 2px;
+			left: 50%;
+			top: 20px;
+			opacity: 0;
+			background-color: map-get($site-colors, 7);
+			@include arsh--transform-origin(center center);
+			@include arsh--transform(translate(-50%, 0%));
+			@include arsh--animation(0.3s ease normal forwards 1 pulse);
+		}
+
+		&:hover,
+		&:focus,
+		&.active {
+			color: map-get($site-colors, 7);
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.row {
+    border-width: 2px !important;
+
+    .characteristic {
+        padding-left: 17px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            background-color: map-get($site-colors, 3);
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+    }
+
+    a[data-toggle="collapse"] {
+        color: map-get($site-colors, 2);
+
+        &:hover {
+            color: map-get($site-colors, 2);
+            text-decoration: underline;
+        }
+    }
+}

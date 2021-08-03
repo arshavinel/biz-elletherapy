@@ -1,0 +1,139 @@
+body {
+    background-color: map-get($cms-colors, 8);
+    font-family: 'Lucida Sans', 'Lucida Sans Unicode';
+    font-size: 13px;
+}
+
+nav {
+    background-color: map-get($cms-colors, 1);
+    color: map-get($cms-colors, 5);
+
+    .navbar-brand {
+        @include arsh--linear-gradient-3params(left, map-get($cms-colors, 6), map-get($cms-colors, 7));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        // for mobile, not overflowing navbar-toggler
+        max-width: calc(100% - 75px);
+        overflow: hidden;
+        width: auto;
+        text-overflow: ellipsis;
+
+        sup {
+            -webkit-text-fill-color: initial;
+        }
+    }
+    .navbar-collapse {
+        [class*="col-"] {
+            &:not(:first-child) {
+                margin-left: 20px;
+            }
+
+            .icon {
+                background-color: map-get($cms-colors, 2);
+                color: map-get($cms-colors, 5);
+                border-radius: 50%;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+
+                &:hover {
+                    color: map-get($cms-colors, 4);
+                }
+
+                i {
+                    display: inline-block;
+                }
+            }
+            .dropdown {
+                div[data-toggle="dropdown"] {
+                    cursor: pointer;
+                    position: relative;
+                    padding: 0px 60px 0px 5px;
+
+                    .name, .group {
+                        display: block;
+                    }
+                    .group {
+                        color: map-get($cms-colors, 4);
+                        font-size: 11px;
+                    }
+
+                    i {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        @include arsh--transform(translate(-0%, -50%));
+                    }
+                }
+                .dropdown-menu {
+                    font-size: inherit;
+                }
+            }
+        }
+
+        #navigation-menu {
+            padding: 0px;
+            background-color: #3d3d3d;
+            margin-left: 0px;
+
+            a {
+                background-color: #3d3d3d;
+                text-decoration: none;
+                color: #eee;
+                border: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.125);
+
+                i.fas.fa-caret-down {
+                    float: right;
+                    line-height: 22px;
+                    margin-left: 5px;
+                    @include arsh--transition(all 0.4s ease);
+                }
+
+                &[aria-expanded="true"] {
+                    i.fas.fa-caret-down {
+                        @include arsh--transform(rotate(-180deg));
+                    }
+                }
+                &:hover,
+                &.active {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+                &.active {
+                    color: map-get($cms-colors, 6);
+                }
+                &.disabled {
+                    color: #6c757d; // gray
+                }
+            }
+            ul {
+                a {
+                    font-size: 12px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+#app {
+    margin-top: 56px; // margin being here, doesn't affect the iframes
+
+    #cms-copyright {
+        a {
+            text-shadow: 0 0 #000;
+            letter-spacing: 1px;
+
+            &:hover {
+                color: #dc3545;
+                text-shadow: 0 0 #000;
+                text-decoration: underline;
+            }
+        }
+    }
+}

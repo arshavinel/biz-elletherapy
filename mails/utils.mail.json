@@ -1,0 +1,12 @@
+{
+    "scss": {
+        "paths": [
+            "plugins/bootstrap",
+            "plugins/mixins",
+            "plugins/spacings",
+            "custom/site/colors",
+            "custom/global"
+        ],
+        "vars": {}
+    }
+}

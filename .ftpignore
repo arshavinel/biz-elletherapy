@@ -1,0 +1,13 @@
+# from web server
+.well-known/
+cgi-bin/
+
+# from git project
+.gitignore
+
+.ftpconfig
+.ftpconfig.cson
+.ftpignore
+id_rsa
+.DS_Store
+.git

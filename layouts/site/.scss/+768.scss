@@ -1,0 +1,26 @@
+body {
+	padding-top: calc(83.55px + 15px);
+
+	#app {
+		min-height: calc(100vh - (83.55px + 15px + 69px));
+	}
+}
+
+nav.navbar {
+	z-index: 3;
+
+	li.nav-item {
+		position: relative;
+		margin-left: 20px;
+
+		a.nav-link {
+			color: map-get($site-colors, 7);
+
+			&:hover,
+			&:focus,
+			&.active {
+				color: map-get($site-colors, 7);
+			}
+		}
+	}
+}

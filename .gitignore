@@ -1,0 +1,7 @@
+caches/
+errors/
+uploads/*
+!uploads/**/.htaccess
+
+# from Atom remote-ftp package
+.ftpquota
