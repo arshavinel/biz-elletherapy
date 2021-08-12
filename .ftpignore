@@ -4,6 +4,7 @@ cgi-bin/
 
 # from git project
 .gitignore
+.gitmodules
 
 .ftpconfig
 .ftpconfig.cson
