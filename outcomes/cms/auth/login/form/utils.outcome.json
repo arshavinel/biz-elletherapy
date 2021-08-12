@@ -1,17 +1,19 @@
 {
     "layout": "cms/login",
     "scss": {
-        "paths": [],
-        "vars": {}
+        "vars": {},
+        "ArshWell": [],
+        "project": []
     },
     "js": {
         "routes": {
-            "groups": [
-                "site"
-            ],
+            "groups": [],
             "exceptions": []
         },
-        "header": [],
-        "footer": []
+        "header": {
+            "ArshWell": [],
+            "project": []
+        },
+        "footer": {}
     }
 }

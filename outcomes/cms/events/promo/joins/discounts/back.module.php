@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Table\TableValidationResponse;
-use App\Tables\Event\Promo\Discount\Join;
-use App\Tables\Event\Promo\Discount;
+use Arsh\Core\Meta;
+use Arsh\Core\Table\TableValidationResponse;
+use Brain\Table\Event\Promo\Discount\Join;
+use Brain\Table\Event\Promo\Discount;
 
 Meta::set('title', "Reduceri aplicări");
 
@@ -15,7 +15,7 @@ return array(
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

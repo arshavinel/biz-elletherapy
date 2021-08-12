@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Mail;
-use App\Validations\SiteValidation;
-use App\Tables\Form\Appointment;
-use App\Tables\Service;
+use Arsh\Core\Mail;
+use Brain\Validation\SiteValidation;
+use Brain\Table\Form\Appointment;
+use Brain\Table\Service;
 
 $form = SiteValidation::run($_POST,
     array(
@@ -81,7 +81,7 @@ if ($form->valid()) {
         Mail::send(
             'appointments/confirmation',
             $form->value('email'),
-            App\Views\Site::sentence('email.programare.subiect', NULL, true),
+            Brain\View\Site::sentence('email.programare.subiect', NULL, true),
             array(
                 'fields'    => array(
                     'lastname'  => $form->value('lastname'),

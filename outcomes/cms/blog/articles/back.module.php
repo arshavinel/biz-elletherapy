@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Articole');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Article::class
+        'table' => Brain\Table\Article::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -39,10 +39,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Article,preview"
+                        "required|image:Brain\Table\Article,preview"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Article,preview"
+                        "optional|image:Brain\Table\Article,preview"
                     )
                 )
             )
@@ -53,14 +53,14 @@ return array(
                 'column'    => 'id_category',
                 'type'      => 'int',
                 'from'      => array(
-                    'table'     => App\Tables\Article\Category::class,
+                    'table'     => Brain\Table\Article\Category::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "required|int",
-                    "inDB:".App\Tables\Article\Category::class.','.App\Tables\Article\Category::PRIMARY_KEY
+                    "inDB:".Brain\Table\Article\Category::class.','.Brain\Table\Article\Category::PRIMARY_KEY
                 )
             )
         ),

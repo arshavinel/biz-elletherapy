@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\ENV;
-use App\Tables\CMS\Admin;
+use Arsh\Core\Meta;
+use Arsh\Core\ENV;
+use Brain\Table\CMS\Admin;
 
 if (ENV::board('dev')) {
     $admin = Admin::first(array(

@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Text;
-use App\Core\Web;
-use App\Core\ENV;
-use App\Validations\CMSValidation;
-use App\Tables\CMS\Admin;
+use Arsh\Core\Text;
+use Arsh\Core\Web;
+use Arsh\Core\ENV;
+use Brain\Validation\CMSValidation;
+use Brain\Table\CMS\Admin;
 
 $container = Text::slug(ENV::url());
 

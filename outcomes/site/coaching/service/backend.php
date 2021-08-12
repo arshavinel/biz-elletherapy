@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Text;
-use App\Core\Web;
-use App\Tables\Service;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Arsh\Core\Text;
+use Arsh\Core\Web;
+use Brain\Table\Service;
+use Brain\View\Site;
 
 $service = Service::first(
     array(

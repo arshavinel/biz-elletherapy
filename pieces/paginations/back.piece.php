@@ -1,6 +1,6 @@
 <?php
 
-use App\Core\Web;
+use Arsh\Core\Web;
 
 $links = call_user_func(function () use ($piece): array {
     $piece['icons'] = array(

@@ -1,6 +1,6 @@
 <?php
 
-use App\Tables\CMS\Admin;
+use Brain\Table\CMS\Admin;
 
 return array(
     'breadcrumbs' => array(

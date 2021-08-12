@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Web;
-use App\Tables\NLP\FAQ;
+use Arsh\Core\Web;
+use Brain\Table\NLP\FAQ;
 
 return array(
     'breadcrumbs' => array(

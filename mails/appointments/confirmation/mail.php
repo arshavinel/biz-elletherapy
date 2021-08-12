@@ -10,20 +10,20 @@
 		<table id="header">
 			<tr>
 		        <td align="left">
-					<h3><?= App\Views\Site::sentence('titlu', NULL, true) ?></h3>
+					<h3><?= Brain\View\Site::sentence('titlu', NULL, true) ?></h3>
 				</td>
 				<td align="right">
-					<a target="_blank" href="<?= App\Core\Web::site() ?>">
-						<img src="<?= (new App\Core\Table\Files\Image('App\Tables\Logo', App\Tables\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
+					<a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
+						<img src="<?= (new Arsh\Core\Table\Files\Image('Brain\Table\Logo', Brain\Table\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
 					</a>
 				</td>
 			</tr>
 		</table>
 
-		<p><?= App\Views\Site::content('conținut', $mail['fields'], true) ?></p>
+		<p><?= Brain\View\Site::content('conținut', $mail['fields'], true) ?></p>
 
 		<div id="footer">
-            <a target="_blank" href="<?= App\Core\Web::site() ?>">
+            <a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
 				Melena Therapy
 			</a>
         </div>

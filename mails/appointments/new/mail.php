@@ -10,25 +10,25 @@
 		<table id="header">
 			<tr>
 		        <td align="left">
-					<h3><?= App\Views\Site::sentence('titlu') ?></h3>
+					<h3><?= Brain\View\Site::sentence('titlu') ?></h3>
 				</td>
 				<td align="right">
-					<a target="_blank" href="<?= App\Core\Web::site() ?>">
-						<img src="<?= (new App\Core\Table\Files\Image('App\Tables\Logo', App\Tables\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
+					<a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
+						<img src="<?= (new Arsh\Core\Table\Files\Image('Brain\Table\Logo', Brain\Table\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
 					</a>
 				</td>
 			</tr>
 		</table>
 
-		<p><?= App\Views\Site::content('conținut') ?></p>
+		<p><?= Brain\View\Site::content('conținut') ?></p>
 
 		<div class="table-responsive">
 			<table border="1" cellpadding="5" cellspacing="0">
 				<tr>
-					<th><?= App\Views\Site::sentence('tabel.coloană.id') ?></th>
-					<th><?= App\Views\Site::sentence('tabel.coloană.nume') ?></th>
-					<th><?= App\Views\Site::sentence('tabel.coloană.telefon') ?></th>
-					<th><?= App\Views\Site::sentence('tabel.coloană.adăugat') ?></th>
+					<th><?= Brain\View\Site::sentence('tabel.coloană.id') ?></th>
+					<th><?= Brain\View\Site::sentence('tabel.coloană.nume') ?></th>
+					<th><?= Brain\View\Site::sentence('tabel.coloană.telefon') ?></th>
+					<th><?= Brain\View\Site::sentence('tabel.coloană.adăugat') ?></th>
 				</tr>
 				<?php
 				foreach ($mail['appointments'] as $appointment) { ?>
@@ -42,14 +42,14 @@
 			</table>
 		</div>
 
-		<p><?= App\Views\Site::content('programări', array(
-			'link' => '<a target="_blank" href="'. App\Core\Web::url('cms.forms.appointment') .'">'.
-				App\Views\Site::sentence('programări.link.text') .
+		<p><?= Brain\View\Site::content('programări', array(
+			'link' => '<a target="_blank" href="'. Arsh\Core\Web::url('cms.forms.appointment') .'">'.
+				Brain\View\Site::sentence('programări.link.text') .
 			'</a>'
 		)) ?></p>
 
 		<div id="footer">
-            <a target="_blank" href="<?= App\Core\Web::site() ?>">
+            <a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
 				Melena Therapy
 			</a>
         </div>

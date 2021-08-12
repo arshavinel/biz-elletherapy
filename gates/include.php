@@ -1,6 +1,6 @@
 <?php
 
-use App\Core\Web;
+use Arsh\Core\Web;
 
 if (Web::inGroup('site') || Web::is('404.site')) {
 	foreach (glob("gates/site/*.php") as $file) {

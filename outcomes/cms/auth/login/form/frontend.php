@@ -6,10 +6,10 @@
 			<sup class="badge badge-danger text-monospace font-weight-light text-capitalize" title="Te afli în varianta demo">DEMO</sup>
 		<?php } ?>
 	</h6>
-	<form method="POST" action="<?= App\Core\Web::url('cms.auth.login.submit') ?>" class="border border-primary rounded p-4">
-		<?= App\Core\HTML::formToken() ?>
+	<form method="POST" action="<?= Arsh\Core\Web::url('cms.auth.login.submit') ?>" class="border border-primary rounded p-4">
+		<?= Arsh\Core\HTML::formToken() ?>
 		<?php
-		if (!empty($_GET['url']) && App\Core\Filter::isURL($_GET['url'])) { ?>
+		if (!empty($_GET['url']) && Arsh\Core\Filter::isURL($_GET['url'])) { ?>
 			<input type="hidden" name="url" value="<?= $_GET['url'] ?>" />
 		<?php } ?>
 		<div class="form-group">

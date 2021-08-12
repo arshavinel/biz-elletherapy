@@ -1,6 +1,6 @@
 <?php
 
-use App\Tables\Service;
+use Brain\Table\Service;
 
 $services = Service::select(array(
     'columns'   => "title:lg, price:lg, description:lg, has_page",

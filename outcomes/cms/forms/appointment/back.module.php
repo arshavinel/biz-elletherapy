@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Meta;
-use App\Tables\Form\Appointment;
+use Arsh\Core\Meta;
+use Brain\Table\Form\Appointment;
 
 Meta::set('title', 'Formulare programări');
 
@@ -13,7 +13,7 @@ return array(
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -87,13 +87,13 @@ return array(
                 'column'    => 'id_service',
                 'type'      => 'int',
                 'from'      => array(
-                    'table'     => App\Tables\Service::class,
+                    'table'     => Brain\Table\Service::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
-                    "required|inDB:App\Tables\Service,id_service"
+                    "required|inDB:Brain\Table\Service,id_service"
                 )
             )
         ),

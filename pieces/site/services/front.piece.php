@@ -1,4 +1,4 @@
-<div <?= ($piece['homepage'] ? 'class="background-piece" style="background-image: url('. App\Views\Site::image('servicii.background', 1400, 1000) .');"' : '') ?>>
+<div <?= ($piece['homepage'] ? 'class="background-piece" style="background-image: url('. Brain\View\Site::image('servicii.background', 1400, 1000) .');"' : '') ?>>
     <div class="container text-center padding-3rd-6th">
         <div class="row">
             <?php
@@ -10,20 +10,20 @@
                     <b class="my-2 d-block"><?= $service->translation('price') ?></b>
                     <div class="box">
                         <p class="mb-1">
-                            <?= App\Core\Text::removeAllTags($service->translation('description')) ?>
+                            <?= Arsh\Core\Text::removeAllTags($service->translation('description')) ?>
                         </p>
                     </div>
                     <?php
                     if ($service->has_page) { ?>
                         <a class="btn btn-sm <?= ($piece['homepage'] ? 'btn-7-4' : 'btn-4-7') ?>"
-                        href="<?= App\Core\Web::url('site.coaching.service', ['id'=>$service->id(),'slug'=>$service->translation('title')]) ?>">
-                            <?= App\Views\Site::sentence('serviciu.link.text', NULL, true) ?>
+                        href="<?= Arsh\Core\Web::url('site.coaching.service', ['id'=>$service->id(),'slug'=>$service->translation('title')]) ?>">
+                            <?= Brain\View\Site::sentence('serviciu.link.text', NULL, true) ?>
                         </a>
                     <?php }
                     else { ?>
                         <button class="btn btn-sm text-color-2">
-                            <span><?= App\Views\Site::sentence('buton.extinde', NULL, true) ?></span>
-                            <span class="d-none"><?= App\Views\Site::sentence('buton.restrânge', NULL, true) ?></span>
+                            <span><?= Brain\View\Site::sentence('buton.extinde', NULL, true) ?></span>
+                            <span class="d-none"><?= Brain\View\Site::sentence('buton.restrânge', NULL, true) ?></span>
                         </button>
                     <?php } ?>
                 </div>

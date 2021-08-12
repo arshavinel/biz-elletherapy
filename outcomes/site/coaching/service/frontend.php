@@ -1,7 +1,7 @@
-<?= App\Core\Piece::html('site/banner', array(
+<?= Arsh\Core\Piece::html('site/banner', array(
     'background'    => $service->file('preview')->url('big'),
     'sentence'      => $service->translation('title'),
-    'tag'           => App\Views\Site::sentence('banner.subtitlu')
+    'tag'           => Brain\View\Site::sentence('banner.subtitlu')
 )) ?>
 
 <div class="container padding-3rd-3rd">

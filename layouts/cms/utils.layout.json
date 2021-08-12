@@ -1,17 +1,17 @@
 {
     "scss": {
-        "paths": [
-            "plugins/bootstrap",
-            "custom/cms/colors",
-            "plugins/defaults",
-            "custom/global",
-            "plugins/module/*",
-            "plugins/select2",
-            "plugins/multiselect",
-            "plugins/bootstrap-tagsinput",
-            "plugins/fancybox"
+        "vars": {},
+        "ArshWell": [
+            "defaults",
+            "module/*",
+            "select2",
+            "multiselect",
+            "bootstrap-tagsinput",
+            "fancybox"
         ],
-        "vars": {}
+        "project": [
+            "cms/colors"
+        ]
     },
     "js": {
         "routes": {
@@ -20,19 +20,23 @@
             ],
             "exceptions": []
         },
-        "header": [
-            "plugins/module/*",
-            "plugins/tinymce-v5"
-        ],
-        "footer": [
-            "plugins/select2",
-            "plugins/bootstrap-v4/tooltip",
-            "plugins/bootstrap-v4/popover",
-            "plugins/bootstrap-v4/modal",
-            "plugins/bootstrap-confirmation",
-            "plugins/multiselect",
-            "plugins/bootstrap-tagsinput",
-            "plugins/fancybox"
-        ]
+        "header": {
+            "ArshWell": [
+                "module/*",
+                "tinymce-v5"
+            ]
+        },
+        "footer": {
+            "ArshWell": [
+                "select2",
+                "bootstrap-v4/tooltip",
+                "bootstrap-v4/popover",
+                "bootstrap-v4/modal",
+                "bootstrap-confirmation",
+                "multiselect",
+                "bootstrap-tagsinput",
+                "fancybox"
+            ]
+        }
     }
 }

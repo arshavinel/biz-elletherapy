@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Meta;
-use App\Tables\Media;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Brain\Table\Media;
+use Brain\View\Site;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

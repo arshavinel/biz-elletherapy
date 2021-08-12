@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <title><?= App\Core\Meta::get('title') ?></title>
+    <title><?= Arsh\Core\Meta::get('title') ?></title>
     <?php
-    if (App\Core\Meta::exists('description')) { ?>
-        <meta name="description" itemprop="description" content="<?= App\Core\Meta::get('description') ?>">
+    if (Arsh\Core\Meta::exists('description')) { ?>
+        <meta name="description" itemprop="description" content="<?= Arsh\Core\Meta::get('description') ?>">
     <?php } ?>
 
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />

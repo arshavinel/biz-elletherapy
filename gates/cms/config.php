@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Table\Files\Image;
-use App\Core\Web;
-use App\Tables\Form\Appointment;
-use App\Tables\ContactForm;
-use App\Tables\Logo;
+use Arsh\Core\Table\Files\Image;
+use Arsh\Core\Web;
+use Brain\Table\Form\Appointment;
+use Brain\Table\ContactForm;
+use Brain\Table\Logo;
 
 $cms_config = array(
     'content' => array(
@@ -13,7 +13,7 @@ $cms_config = array(
             Logo::field('id_logo', "visible = 1"),
             'favicon_cms'
         ))->url('tinny'),
-        'demo'      => App\Core\ENV::root() && App\Core\ENV::board('dev'),
+        'demo'      => Arsh\Core\ENV::root() && Arsh\Core\ENV::board('dev'),
         'title'     => "CMS Melena",
         'routes'    => array(
             'site'      => 'site.home',

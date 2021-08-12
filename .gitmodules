@@ -1,0 +1,4 @@
+[submodule "ArshWell"]
+	path = ArshWell
+	url = https://github.com/wally-arshavin/ArshWell
+	branch = main

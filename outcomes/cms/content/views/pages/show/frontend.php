@@ -1,16 +1,16 @@
 <div class="row">
-    <?= App\Core\Module\HTML\Piece::actions(
+    <?= Arsh\Core\Module\HTML\Piece::actions(
         array(
             'Conținut',
             'Pagini',
-            App\Views\CMS::sentence('route.'. $source, NULL, true),
-            App\Core\Module\HTML\Action::link(4, array(
+            Brain\View\CMS::sentence('route.'. $source, NULL, true),
+            Arsh\Core\Module\HTML\Action::link(4, array(
                 'HTML' => array(
                     'href'  => call_user_func(function () use ($source) {
-                        $source = App\Views\Site::get(App\Core\Web::param('id'), 'source')->source;
+                        $source = Brain\View\Site::get(Arsh\Core\Web::param('id'), 'source')->source;
 
-                        if (App\Core\Web::exists($source)) {
-                            return App\Core\Web::url($source);
+                        if (Arsh\Core\Web::exists($source)) {
+                            return Arsh\Core\Web::url($source);
                         }
 
                         return '#';
@@ -27,7 +27,7 @@
                 'HTML' => array(
                     'text'  => 'Pagini',
                     'type'  => 'link',
-                    'href'  => App\Core\Web::url('cms.content.views.pages.all'),
+                    'href'  => Arsh\Core\Web::url('cms.content.views.pages.all'),
                     'class' => "btn btn-sm btn-info"
                 )
             )
@@ -36,7 +36,7 @@
 </div>
 
 <div class="arshmodule">
-    <form method="POST" class="arshmodule-form" action="<?= App\Core\Web::url('cms.content.views.ajax.update') ?>">
+    <form method="POST" class="arshmodule-form" action="<?= Arsh\Core\Web::url('cms.content.views.ajax.update') ?>">
         <input type="hidden" name="global" value="0" />
         <input type="hidden" name="source" value="<?= $source ?>" />
 
@@ -48,11 +48,11 @@
                         <div class="card-header">
                             <b>Conținut</b>
                             <?php
-                            if (App\Views\Site::isTranslated()) { ?>
+                            if (Brain\View\Site::isTranslated()) { ?>
                                 <div style="position: absolute; right: 15px; top: 0;">
-                                    <?= App\Core\Module\HTML\Piece::languages(
-                                        (App\Views\Site::TRANSLATOR)::LANGUAGES,
-                                        (App\Views\Site::TRANSLATOR)::LANGUAGES[0],
+                                    <?= Arsh\Core\Module\HTML\Piece::languages(
+                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES,
+                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES[0],
                                         false
                                     ) ?>
                                 </div>
@@ -63,23 +63,23 @@
                                 <?php
                                 foreach ($view['fields'] as $i => $field) {
                                     switch ($field->type) {
-                                        case App\Views\Site::TYPES['sentence']:
-                                        case App\Views\Site::TYPES['text']:
-                                        case App\Views\Site::TYPES['content']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['sentence']:
+                                        case Brain\View\Site::TYPES['text']:
+                                        case Brain\View\Site::TYPES['content']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
                                                         'label' => $field->info,
                                                         'type'  => function () use ($field) {
                                                             switch ($field->type) {
-                                                                case App\Views\Site::TYPES['sentence']: {
+                                                                case Brain\View\Site::TYPES['sentence']: {
                                                                     return 'text';
                                                                 }
-                                                                case App\Views\Site::TYPES['text']: {
+                                                                case Brain\View\Site::TYPES['text']: {
                                                                     return 'textarea';
                                                                 }
-                                                                case App\Views\Site::TYPES['content']: {
+                                                                case Brain\View\Site::TYPES['content']: {
                                                                     return 'textarea';
                                                                 }
                                                             }
@@ -107,32 +107,32 @@
                                                     ),
                                                     'JS' => array(
                                                         'tinymce' => function () use ($field) {
-                                                            return ($field->type == App\Views\Site::TYPES['content']);
+                                                            return ($field->type == Brain\View\Site::TYPES['content']);
                                                         }
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($field), $field->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($field), $field->id(), 'value'),
                                                 (($field)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['image']:
-                                        case App\Views\Site::TYPES['images']:
-                                        case App\Views\Site::TYPES['video']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['image']:
+                                        case Brain\View\Site::TYPES['images']:
+                                        case Brain\View\Site::TYPES['video']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
                                                         'label' => $field->info,
                                                         'type'  => function () use ($field) {
                                                             switch ($field->type) {
-                                                                case App\Views\Site::TYPES['image']: {
+                                                                case Brain\View\Site::TYPES['image']: {
                                                                     return 'image';
                                                                 }
-                                                                case App\Views\Site::TYPES['images']: {
+                                                                case Brain\View\Site::TYPES['images']: {
                                                                     return 'images';
                                                                 }
-                                                                case App\Views\Site::TYPES['video']: {
+                                                                case Brain\View\Site::TYPES['video']: {
                                                                     return 'video';
                                                                 }
                                                             }
@@ -143,14 +143,14 @@
                                                 ),
                                                 call_user_func(function () use ($field) {
                                                     switch ($field->type) {
-                                                        case App\Views\Site::TYPES['image']: {
-                                                            return new App\Core\Table\Files\Image(get_class($field), $field->id(), 'value');
+                                                        case Brain\View\Site::TYPES['image']: {
+                                                            return new Arsh\Core\Table\Files\Image(get_class($field), $field->id(), 'value');
                                                         }
-                                                        case App\Views\Site::TYPES['images']: {
-                                                            return new App\Core\Table\Files\ImageGroup(get_class($field), $field->id(), 'value');
+                                                        case Brain\View\Site::TYPES['images']: {
+                                                            return new Arsh\Core\Table\Files\ImageGroup(get_class($field), $field->id(), 'value');
                                                         }
-                                                        case App\Views\Site::TYPES['video']: {
-                                                            return new App\Core\Table\Files\Doc(get_class($field), $field->id(), 'value');
+                                                        case Brain\View\Site::TYPES['video']: {
+                                                            return new Arsh\Core\Table\Files\Doc(get_class($field), $field->id(), 'value');
                                                         }
                                                     }
                                                 }),
@@ -158,8 +158,8 @@
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['checked']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['checked']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -173,7 +173,7 @@
                                                         )
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($field), $field->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($field), $field->id(), 'value'),
                                                 (($field)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
@@ -190,9 +190,9 @@
                         <div class="card-header">
                             <b>SEO</b>
                             <?php
-                            if (App\Views\Site::isTranslated()) { ?>
+                            if (Brain\View\Site::isTranslated()) { ?>
                                 <div style="position: absolute; right: 15px; top: 0;">
-                                    <?= App\Core\Module\HTML\Piece::languages(
+                                    <?= Arsh\Core\Module\HTML\Piece::languages(
                                         (($field)::TRANSLATOR)::LANGUAGES,
                                         (($field)::TRANSLATOR)::LANGUAGES[0],
                                         false
@@ -205,19 +205,19 @@
                                 <?php
                                 foreach ($view['SEO'] as $i => $field) {
                                     switch ($field->type) {
-                                        case App\Views\Site::TYPES['sentenceSEO']:
-                                        case App\Views\Site::TYPES['textSEO']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['sentenceSEO']:
+                                        case Brain\View\Site::TYPES['textSEO']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
                                                         'label' => $field->info,
                                                         'type'  => function () use ($field) {
                                                             switch ($field->type) {
-                                                                case App\Views\Site::TYPES['sentenceSEO']: {
+                                                                case Brain\View\Site::TYPES['sentenceSEO']: {
                                                                     return 'text';
                                                                 }
-                                                                case App\Views\Site::TYPES['textSEO']: {
+                                                                case Brain\View\Site::TYPES['textSEO']: {
                                                                     return 'textarea';
                                                                 }
                                                             }
@@ -244,13 +244,13 @@
                                                         }
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($field), $field->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($field), $field->id(), 'value'),
                                                 (($field)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['imageSEO']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['imageSEO']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -260,7 +260,7 @@
                                                         'name'  => "data[$field->type][$field->info]"
                                                     )
                                                 ),
-                                                new App\Core\Table\Files\Image(get_class($field), $field->id(), 'value'),
+                                                new Arsh\Core\Table\Files\Image(get_class($field), $field->id(), 'value'),
                                                 (($field)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
@@ -273,10 +273,10 @@
                 <?php } ?>
             </div>
             <div class="col-lg-4">
-                <?= App\Core\Module\HTML\Piece::saver(array()) ?>
+                <?= Arsh\Core\Module\HTML\Piece::saver(array()) ?>
             </div>
         </div>
     </form>
 
-    <?= App\Core\Module\HTML\Piece::dialog() ?>
+    <?= Arsh\Core\Module\HTML\Piece::dialog() ?>
 </div>

@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Media');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Media::class
+        'table' => Brain\Table\Media::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -38,10 +38,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|video:App\Tables\Media,video"
+                        "required|video:Brain\Table\Media,video"
                     ),
                     'update' => array(
-                        "optional|video:App\Tables\Media,video"
+                        "optional|video:Brain\Table\Media,video"
                     )
                 )
             )

@@ -9,18 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title><?= App\Core\Meta::get('title') ?></title>
+    <title><?= Arsh\Core\Meta::get('title') ?></title>
     <?php
-    if (App\Core\Meta::exists('description')) { ?>
-        <meta name="description" itemprop="description" content="<?= App\Core\Meta::get('description') ?>">
+    if (Arsh\Core\Meta::exists('description')) { ?>
+        <meta name="description" itemprop="description" content="<?= Arsh\Core\Meta::get('description') ?>">
     <?php }
-    if (App\Core\Meta::exists('keywords')) { ?>
-        <meta name="keywords" itemprop="keywords" content="<?= App\Core\Meta::get('keywords') ?>">
+    if (Arsh\Core\Meta::exists('keywords')) { ?>
+        <meta name="keywords" itemprop="keywords" content="<?= Arsh\Core\Meta::get('keywords') ?>">
     <?php } ?>
     <meta name="expires" content="never">
     <meta name="revisit-after" content="1 Days">
 
-    <meta name="robots" content="<?= (!App\Core\ENV::board('dev') && App\Core\Meta::exists('robots') ? App\Core\Meta::get('robots') : 'noindex, nofollow') ?>" />
+    <meta name="robots" content="<?= (!Arsh\Core\ENV::board('dev') && Arsh\Core\Meta::exists('robots') ? Arsh\Core\Meta::get('robots') : 'noindex, nofollow') ?>" />
 
     [@css@]
 
@@ -28,7 +28,7 @@
 
     [@js-header@]
 
-    <link href="<?= (new App\Core\Table\Files\Image('App\Tables\Logo', App\Tables\Logo::field('id_logo', "visible = 1"), 'favicon_site'))->url('tinny') ?>"
+    <link href="<?= (new Arsh\Core\Table\Files\Image('Brain\Table\Logo', Brain\Table\Logo::field('id_logo', "visible = 1"), 'favicon_site'))->url('tinny') ?>"
     rel="shortcut icon" type="image/png" />
 </head>
 <body>

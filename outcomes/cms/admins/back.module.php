@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Web;
-use App\Tables\CMS\Admin;
-use App\Tables\CMS\Role;
+use Arsh\Core\Meta;
+use Arsh\Core\Web;
+use Brain\Table\CMS\Admin;
+use Brain\Table\CMS\Role;
 
 Meta::set('title', 'Admini');
 
@@ -15,7 +15,7 @@ return array(
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

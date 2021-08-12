@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Serii evenimente');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Event\Group::class
+        'table' => Brain\Table\Event\Group::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

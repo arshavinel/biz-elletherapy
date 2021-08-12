@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Lucruri interesante');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\NLP\FAQ::class
+        'table' => Brain\Table\NLP\FAQ::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

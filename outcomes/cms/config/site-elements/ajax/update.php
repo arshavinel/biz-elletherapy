@@ -1,7 +1,7 @@
 <?php
 
-use App\Validations\CMSValidation;
-use App\Tables\Config;
+use Brain\Validation\CMSValidation;
+use Brain\Table\Config;
 
 $form = CMSValidation::run($_POST, array(
     'industries_per_row__md' => array(

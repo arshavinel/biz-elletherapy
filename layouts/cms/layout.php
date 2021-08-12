@@ -10,10 +10,10 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-    <title>CMS - <?= App\Core\Meta::get('title') ?></title>
+    <title>CMS - <?= Arsh\Core\Meta::get('title') ?></title>
     <?php
-    if (App\Core\Meta::exists('description')) { ?>
-        <meta name="description" itemprop="description" content="<?= App\Core\Meta::get('description') ?>">
+    if (Arsh\Core\Meta::exists('description')) { ?>
+        <meta name="description" itemprop="description" content="<?= Arsh\Core\Meta::get('description') ?>">
     <?php } ?>
 
     <meta name="robots" content="noindex,nofollow" />
@@ -28,7 +28,7 @@
     <?php
     if (empty($_GET['iframe']) || $_GET['iframe'] != 1) { ?>
         <nav class="navbar fixed-top navbar-expand-md navbar-dark">
-            <a class="navbar-brand" href="<?= App\Core\Web::url($cms_config['content']['routes']['cms']) ?>">
+            <a class="navbar-brand" href="<?= Arsh\Core\Web::url($cms_config['content']['routes']['cms']) ?>">
                 <?= $cms_config['content']['title'] ?>
                 <?php
                 if ($cms_config['content']['demo']) { ?>
@@ -41,14 +41,14 @@
             <div class="collapse navbar-collapse mt-2 pt-2 mt-md-0 pt-md-0" id="CMSNavbarDropdown">
                 <div class="row no-gutters w-100 align-items-center justify-content-md-end">
                     <?php
-                    if (App\Tables\CMS\Admin::auth('id_cms_role') == 1) { ?>
+                    if (Brain\Table\CMS\Admin::auth('id_cms_role') == 1) { ?>
                         <div class="col-auto">
                             <div class="dropdown">
                                 <a type="button" class="icon" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i aria-hidden="true" class="fa fa-fw fa-user-friends"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-md-center mt-1">
-                                    <a class="dropdown-item" href="<?= App\Core\Web::url($cms_config['content']['routes']['admins']) ?>">
+                                    <a class="dropdown-item" href="<?= Arsh\Core\Web::url($cms_config['content']['routes']['admins']) ?>">
                                         <i aria-hidden="true" class="fa fa-fw fa-user-friends"></i>
                                         Useri
                                     </a>
@@ -69,7 +69,7 @@
                         </div>
                     <?php } ?>
                     <div class="col-auto">
-                        <a class="icon" href="<?= App\Core\Web::url($cms_config['content']['routes']['site']) ?>" target="_blank"
+                        <a class="icon" href="<?= Arsh\Core\Web::url($cms_config['content']['routes']['site']) ?>" target="_blank"
                         data-toggle="tooltip" data-container="body" data-placement="bottom" title="Vezi site-ul">
                             <i aria-hidden="true" class="fa fa-fw fa-share"></i>
                         </a>
@@ -80,17 +80,17 @@
                     <div class="col-auto ml-auto ml-md-3">
                         <div class="dropdown">
                             <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="name"><?= App\Tables\CMS\Admin::auth('name') ?></span>
-                                <span class="group"><?= App\Tables\CMS\Admin::auth('role') ?></span>
+                                <span class="name"><?= Brain\Table\CMS\Admin::auth('name') ?></span>
+                                <span class="group"><?= Brain\Table\CMS\Admin::auth('role') ?></span>
                                 <i class="fa fa-2x fa-fw fa-caret-down"></i>
                             </div>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="<?= App\Core\Web::url($cms_config['content']['routes']['admins']) ?>?ftr=update&id=<?= App\Tables\CMS\Admin::auth('id_cms_admin') ?>">
+                                <a class="dropdown-item" href="<?= Arsh\Core\Web::url($cms_config['content']['routes']['admins']) ?>?ftr=update&id=<?= Brain\Table\CMS\Admin::auth('id_cms_admin') ?>">
                                     <i aria-hidden="true" class="fa fa-fw fa-user"></i>
                                     Date cont
                                 </a>
-                                <form method="POST" action="<?= App\Core\Web::url($cms_config['content']['routes']['logout']) ?>">
-                                    <?= App\Core\HTML::formToken() ?>
+                                <form method="POST" action="<?= Arsh\Core\Web::url($cms_config['content']['routes']['logout']) ?>">
+                                    <?= Arsh\Core\HTML::formToken() ?>
                                     <button type="submit" class="dropdown-item">
                                         <i aria-hidden="true" class="fa fa-fw fa-sign-out-alt"></i>
                                         Deloghează-te
@@ -104,7 +104,7 @@
                         <?php
                         $fn_menu = function (array $links, string $preid = 'nm', int $layers = 1, array $subroutes = array()) use (&$fn_menu): void { ?>
                             <div id="<?= $preid ?>"
-                            class="list-group list-group-flush collapse <?= ($preid == 'nm' || App\Core\Web::is($subroutes) ? 'show' : '') ?>">
+                            class="list-group list-group-flush collapse <?= ($preid == 'nm' || Arsh\Core\Web::is($subroutes) ? 'show' : '') ?>">
                                 <?php
                                 foreach ($links as $i => $link) {
                                     if (!isset($link['visible']) || $link['visible'] == true) {
@@ -134,12 +134,12 @@
                                         }
 
                                         if (empty($link['links'])) {
-                                            if ((!empty($link['route']) && App\Core\Web::is($link['route'])
-                                            || !empty($link['group']) && App\Core\Web::inGroup($link['group']))) {
+                                            if ((!empty($link['route']) && Arsh\Core\Web::is($link['route'])
+                                            || !empty($link['group']) && Arsh\Core\Web::inGroup($link['group']))) {
                                                 $link_class .= " active";
                                             }
                                             ?>
-                                            <a href="<?= $link['href'] ?? App\Core\Web::url($link['route']) ?>"
+                                            <a href="<?= $link['href'] ?? Arsh\Core\Web::url($link['route']) ?>"
                                             style="padding-left: <?= $layers*19?>px;" class="<?= $link_class ?>"
                                             <?= (!empty($link['tooltip']) ? 'data-toggle="tooltip" data-placement="right" title="'.$link['tooltip'].'"' : '') ?>>
                                                 <i class="<?= $fa_class ?> fa-fw fa-<?= $link['icon']['name'] ?? $link['icon'] ?>"></i>
@@ -164,17 +164,17 @@
                                                 else if ($key == 'group') {
                                                     $subroutes = array_merge(
                                                         $subroutes,
-                                                        App\Core\Web::group($value)
+                                                        Arsh\Core\Web::group($value)
                                                     );
                                                 }
                                             });
 
-                                            if (App\Core\Web::is($subroutes)) {
+                                            if (Arsh\Core\Web::is($subroutes)) {
                                                 $link_class .= " active-parent";
                                             }
                                             ?>
                                             <a href="<?= '#'.$preid.'-'.$i ?>" style="padding-left: <?= $layers*19?>px;" class="<?= $link_class ?>"
-                                            data-toggle="collapse" aria-expanded="<?= (App\Core\Web::is($subroutes) ? 'true' : 'false') ?>"
+                                            data-toggle="collapse" aria-expanded="<?= (Arsh\Core\Web::is($subroutes) ? 'true' : 'false') ?>"
                                             <?= (!empty($link['tooltip']) ? 'data-toggle="tooltip" data-placement="right" title="'.$link['tooltip'].'"' : '') ?>>
                                                 <i class="<?= $fa_class ?> fa-fw fa-<?= $link['icon']['name'] ?? $link['icon'] ?>"></i>
                                                 <?= $link['text'] ?>
@@ -213,7 +213,7 @@
                         [@frontend@]
 
                         <?php
-                        if ($cms_config['content']['copyright'] && !App\Core\Web::inGroup('404')) { ?>
+                        if ($cms_config['content']['copyright'] && !Arsh\Core\Web::inGroup('404')) { ?>
                             <div id="cms-copyright" class="padding-2nd-1st">
                                 <span class="text-danger">
                                     <span class="text-muted">©</span> <b>CMS</b> dezvoltat de echipa

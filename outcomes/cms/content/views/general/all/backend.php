@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Table\TableField;
-use App\Core\Meta;
-use App\Core\DB;
-use App\Views\Site;
+use Arsh\Core\Table\TableField;
+use Arsh\Core\Meta;
+use Arsh\Core\DB;
+use Brain\View\Site;
 
 $views = array_column(DB::select(array(
     'class'     => Site::class,

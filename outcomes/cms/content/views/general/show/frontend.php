@@ -1,12 +1,12 @@
 <div class="row">
-    <?= App\Core\Module\HTML\Piece::actions(
-        array('Conținut', 'General', App\Views\CMS::sentence($source ?: 'view.global', NULL, true)),
+    <?= Arsh\Core\Module\HTML\Piece::actions(
+        array('Conținut', 'General', Brain\View\CMS::sentence($source ?: 'view.global', NULL, true)),
         array(
             array(
                 'HTML' => array(
                     'text'  => 'Toate categoriile',
                     'type'  => 'link',
-                    'href'  => App\Core\Web::url('cms.content.views.general.all'),
+                    'href'  => Arsh\Core\Web::url('cms.content.views.general.all'),
                     'class' => "btn btn-sm btn-info"
                 )
             )
@@ -15,7 +15,7 @@
 </div>
 
 <div class="arshmodule">
-    <form method="POST" class="arshmodule-form" action="<?= App\Core\Web::url('cms.content.views.ajax.update') ?>">
+    <form method="POST" class="arshmodule-form" action="<?= Arsh\Core\Web::url('cms.content.views.ajax.update') ?>">
         <input type="hidden" name="global" value="1" />
         <input type="hidden" name="source" value="<?= $source ?>" />
 
@@ -27,11 +27,11 @@
                         <div class="card-header">
                             <b>Conținut</b>
                             <?php
-                            if (App\Views\Site::isTranslated()) { ?>
+                            if (Brain\View\Site::isTranslated()) { ?>
                                 <div style="position: absolute; right: 15px; top: 0;">
-                                    <?= App\Core\Module\HTML\Piece::languages(
-                                        (App\Views\Site::TRANSLATOR)::LANGUAGES,
-                                        (App\Views\Site::TRANSLATOR)::LANGUAGES[0],
+                                    <?= Arsh\Core\Module\HTML\Piece::languages(
+                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES,
+                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES[0],
                                         false
                                     ) ?>
                                 </div>
@@ -42,8 +42,8 @@
                                 <?php
                                 foreach ($views as $i => $view) {
                                     switch ($view->type) {
-                                        case App\Views\Site::TYPES['sentence']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['sentence']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -69,13 +69,13 @@
                                                         }
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['text']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['text']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -101,13 +101,13 @@
                                                         }
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['content']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['content']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -136,13 +136,13 @@
                                                         'tinymce' => true
                                                     )
                                                 ),
-                                                new App\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['image']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['image']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -152,13 +152,13 @@
                                                         'name'      => "data[$view->type][$view->info]"
                                                     )
                                                 ),
-                                                new App\Core\Table\Files\Image(get_class($view), $view->id(), 'value'),
+                                                new Arsh\Core\Table\Files\Image(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case App\Views\Site::TYPES['images']: {
-                                            echo App\Core\Module\HTML\Piece::field(
+                                        case Brain\View\Site::TYPES['images']: {
+                                            echo Arsh\Core\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -168,7 +168,7 @@
                                                         'name'      => "data[$view->type][$view->info]",
                                                     )
                                                 ),
-                                                new App\Core\Table\Files\ImageGroup(get_class($view), $view->id(), 'value'),
+                                                new Arsh\Core\Table\Files\ImageGroup(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
@@ -181,10 +181,10 @@
                 <?php } ?>
             </div>
             <div class="col-lg-4">
-                <?= App\Core\Module\HTML\Piece::saver(array()) ?>
+                <?= Arsh\Core\Module\HTML\Piece::saver(array()) ?>
             </div>
         </div>
     </form>
 
-    <?= App\Core\Module\HTML\Piece::dialog() ?>
+    <?= Arsh\Core\Module\HTML\Piece::dialog() ?>
 </div>

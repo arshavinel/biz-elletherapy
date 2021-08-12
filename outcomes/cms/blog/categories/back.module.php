@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Categorii articole');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Article\Category::class
+        'table' => Brain\Table\Article\Category::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

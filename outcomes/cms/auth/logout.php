@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Web;
-use App\Validations\CMSValidation;
-use App\Tables\CMS\Admin;
+use Arsh\Core\Web;
+use Brain\Validation\CMSValidation;
+use Brain\Table\CMS\Admin;
 
 $form = CMSValidation::run($_POST);
 

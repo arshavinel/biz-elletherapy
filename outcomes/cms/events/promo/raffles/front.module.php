@@ -27,10 +27,10 @@ return array(
             'HTML' => array(
                 'type'  => 'link',
                 'href'  => function (string $key, int $id) {
-                    $raffle = App\Tables\Event\Promo\Raffle::get($id, "id_meeting, title:lg");
-                    $meeting = App\Tables\Event\Meeting::field('title:lg', "id_meeting = ?", array($raffle->id_meeting));
+                    $raffle = Brain\Table\Event\Promo\Raffle::get($id, "id_meeting, title:lg");
+                    $meeting = Brain\Table\Event\Meeting::field('title:lg', "id_meeting = ?", array($raffle->id_meeting));
 
-                    return App\Core\Web::url('site.events.promo.raffle', array(
+                    return Arsh\Core\Web::url('site.events.promo.raffle', array(
                         'meeting'   => $meeting,
                         'raffle'    => $raffle->translation('title')
                     ));

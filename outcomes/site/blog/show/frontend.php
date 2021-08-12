@@ -1,4 +1,4 @@
-<?= App\Core\Piece::html('site/banner', array(
+<?= Arsh\Core\Piece::html('site/banner', array(
     'background'    => $article->file('preview')->url('big'),
     'sentence'      => $article->translation('title'),
     'tag'           => $article->category
@@ -16,7 +16,7 @@
             foreach ($related_articles as $article) { ?>
                 <div class="col-sm-6 col-md-4 margin-2nd-4th margin-md-1st-3rd">
                     <div class="h-100 bg-color-7">
-                        <a href="<?= App\Core\Web::url('site.blog.show', ['id'=>$article->id(), 'slug'=>$article->translation('title')]) ?>">
+                        <a href="<?= Arsh\Core\Web::url('site.blog.show', ['id'=>$article->id(), 'slug'=>$article->translation('title')]) ?>">
                             <div class="image padding-15th-15th padding-sm-8th-8th padding-md-5th-5th" style="background-image: url('<?= $article->file('preview')->url('medium') ?>');">
                                 <span class="bg-color-2 text-color-7 px-1">
                                     <?= $article->category ?>
@@ -31,7 +31,7 @@
             <?php } ?>
         </div>
         <div class="text-center padding-4th-4th padding-md-2nd-2nd">
-            <a class="btn btn-4-7" href="<?= App\Core\Web::url('site.blog.all') ?>">
+            <a class="btn btn-4-7" href="<?= Arsh\Core\Web::url('site.blog.all') ?>">
                 Vezi toate articolele
             </a>
         </div>

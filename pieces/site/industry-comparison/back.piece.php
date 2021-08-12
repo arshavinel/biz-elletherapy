@@ -1,7 +1,7 @@
 <?php
 
-use App\Tables\Industry;
-use App\Tables\Industry\Characteristic;
+use Brain\Table\Industry;
+use Brain\Table\Industry\Characteristic;
 
 $industries = Industry::select(array(
     'columns'   => "title:lg",

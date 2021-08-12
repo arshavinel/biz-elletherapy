@@ -1,12 +1,12 @@
 <?php
 
-use App\Core\Table\Files\Image;
-use App\Core\Meta;
-use App\Core\ENV;
-use App\Core\Web;
-use App\Core\URL;
-use App\Tables\Logo;
-use App\Views\Site;
+use Arsh\Core\Table\Files\Image;
+use Arsh\Core\Meta;
+use Arsh\Core\ENV;
+use Arsh\Core\Web;
+use Arsh\Core\URL;
+use Brain\Table\Logo;
+use Brain\View\Site;
 
 if (ENV::maintenance('active') == false) {
     Web::go('site.home');

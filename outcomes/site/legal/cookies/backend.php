@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Meta;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Brain\View\Site;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

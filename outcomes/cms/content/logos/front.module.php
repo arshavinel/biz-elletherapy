@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Web;
-use App\Tables\Logo;
+use Arsh\Core\Web;
+use Brain\Table\Logo;
 
 return array(
     'breadcrumbs' => array(

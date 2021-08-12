@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Logo-uri');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Logo::class
+        'table' => Brain\Table\Logo::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -39,10 +39,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Logo,favicon_cms"
+                        "required|image:Brain\Table\Logo,favicon_cms"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Logo,favicon_cms"
+                        "optional|image:Brain\Table\Logo,favicon_cms"
                     )
                 )
             )
@@ -53,10 +53,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Logo,favicon_site"
+                        "required|image:Brain\Table\Logo,favicon_site"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Logo,favicon_site"
+                        "optional|image:Brain\Table\Logo,favicon_site"
                     )
                 )
             )
@@ -67,10 +67,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Logo,header"
+                        "required|image:Brain\Table\Logo,header"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Logo,header"
+                        "optional|image:Brain\Table\Logo,header"
                     )
                 )
             )
@@ -81,10 +81,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Logo,useful"
+                        "required|image:Brain\Table\Logo,useful"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Logo,useful"
+                        "optional|image:Brain\Table\Logo,useful"
                     )
                 )
             )
