@@ -11,3 +11,4 @@ cgi-bin/
 id_rsa
 .DS_Store
 .git
+.git/

@@ -1,17 +1,17 @@
 {
     "scss": {
-        "paths": [
-            "custom/site/colors",
-            "custom/site/styles"
-        ],
-        "vars": {}
+        "vars": {},
+        "project": [
+            "site/colors",
+            "site/styles"
+        ]
     },
     "js": {
         "routes": {
             "groups": [],
             "exceptions": []
         },
-        "header": [],
-        "footer": []
+        "header": {},
+        "footer": {}
     }
 }

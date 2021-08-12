@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\DB;
-use App\Tables\Service;
-use App\Tables\Config;
-use App\Tables\Logo;
+use Arsh\Core\DB;
+use Brain\Table\Service;
+use Brain\Table\Config;
+use Brain\Table\Logo;
 
 $global = array(
     'logos' => Logo::first(array(

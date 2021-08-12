@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Text;
-use App\Core\Web;
-use App\Tables\Article;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Arsh\Core\Text;
+use Arsh\Core\Web;
+use Brain\Table\Article;
+use Brain\View\Site;
 
 $article = Article::first(
     array(

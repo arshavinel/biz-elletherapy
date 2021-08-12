@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Meta;
-use App\Validations\SiteValidation;
-use App\Tables\SocialMedia;
-use App\Views\Site;
-use App\Tables\Service;
+use Arsh\Core\Meta;
+use Brain\Validation\SiteValidation;
+use Brain\Table\SocialMedia;
+use Brain\View\Site;
+use Brain\Table\Service;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

@@ -1,7 +1,7 @@
-<?= App\Core\Piece::html('site/banner', array(
-    'background'    => App\Views\Site::image('banner.imagine', 1400, 650),
-    'sentence'      => App\Views\Site::sentence('banner.text'),
-    'tag'           => App\Views\Site::sentence('banner.pagina')
+<?= Arsh\Core\Piece::html('site/banner', array(
+    'background'    => Brain\View\Site::image('banner.imagine', 1400, 650),
+    'sentence'      => Brain\View\Site::sentence('banner.text'),
+    'tag'           => Brain\View\Site::sentence('banner.pagina')
 )) ?>
 
 <div id="section--letter" class="container margin-3rd-3rd">
@@ -42,36 +42,36 @@
 
         <div class="col-md-6">
             <div class="border border-color-2 text-color-2 p-3 pb-2 h-100">
-                <h1><?= App\Views\Site::sentence('contact.titlu') ?></h1>
+                <h1><?= Brain\View\Site::sentence('contact.titlu') ?></h1>
 
-                <b><?= App\Views\Site::sentence('contact.email') ?></b>
-                <?= App\Tables\Config::title('email') ?>
+                <b><?= Brain\View\Site::sentence('contact.email') ?></b>
+                <?= Brain\Table\Config::title('email') ?>
 
                 <div class="padding-1st-1st">
                     <h5>România</h5>
                     <div>
-                        <b><?= App\Views\Site::sentence('contact.telefon') ?></b>
-                        <a href="tel:<?= str_replace(' ', '', App\Tables\Config::title('phone_romania')) ?>">
-                            <?= App\Tables\Config::title('phone_romania') ?>
+                        <b><?= Brain\View\Site::sentence('contact.telefon') ?></b>
+                        <a href="tel:<?= str_replace(' ', '', Brain\Table\Config::title('phone_romania')) ?>">
+                            <?= Brain\Table\Config::title('phone_romania') ?>
                         </a> (WhatsApp și Viber)
                     </div>
                     <div>
-                        <b><?= App\Views\Site::sentence('contact.adresa') ?></b>
-                        <?= App\Views\Site::content('adresă.romania', NULL, true) ?>
+                        <b><?= Brain\View\Site::sentence('contact.adresa') ?></b>
+                        <?= Brain\View\Site::content('adresă.romania', NULL, true) ?>
                     </div>
                 </div>
 
                 <div class="padding-1st-1st">
                     <h5>Republica Moldova</h5>
                     <div>
-                        <b><?= App\Views\Site::sentence('contact.telefon') ?></b>
-                        <a href="tel:<?= str_replace(' ', '', App\Tables\Config::title('phone_moldova')) ?>">
-                            <?= App\Tables\Config::title('phone_moldova') ?>
+                        <b><?= Brain\View\Site::sentence('contact.telefon') ?></b>
+                        <a href="tel:<?= str_replace(' ', '', Brain\Table\Config::title('phone_moldova')) ?>">
+                            <?= Brain\Table\Config::title('phone_moldova') ?>
                         </a>
                     </div>
                     <div>
-                        <b><?= App\Views\Site::sentence('contact.adresa') ?></b>
-                        <?= App\Views\Site::content('adresă.moldova', NULL, true) ?>
+                        <b><?= Brain\View\Site::sentence('contact.adresa') ?></b>
+                        <?= Brain\View\Site::content('adresă.moldova', NULL, true) ?>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
         </div>
 
         <div id="letter">
-            <img class="mt-3" src="<?= App\Views\Site::image('letter.imagine', 1300, 928) ?>" width="100%" height="auto" />
+            <img class="mt-3" src="<?= Brain\View\Site::image('letter.imagine', 1300, 928) ?>" width="100%" height="auto" />
         </div>
     </form>
 </div>

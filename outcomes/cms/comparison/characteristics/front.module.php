@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Web;
-use App\Tables\Industry\Characteristic;
+use Arsh\Core\Web;
+use Brain\Table\Industry\Characteristic;
 
 return array(
     'breadcrumbs' => array(

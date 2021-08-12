@@ -1,13 +1,13 @@
 <?php
 
-use App\Core\Web;
-use App\Validations\CMSValidation;
-use App\Tables\Service;
+use Arsh\Core\Web;
+use Brain\Validation\CMSValidation;
+use Brain\Table\Service;
 
 $form = CMSValidation::run($_POST, array(
 	'id' => array(
 		"required|int",
-		"inDB:App\Tables\Service,id_service"
+		"inDB:Brain\Table\Service,id_service"
 	),
 	'ftr' => array(
 		'required|int'
@@ -47,7 +47,7 @@ if ($form->valid()) {
 		$feature['JS']['tooltip']['title'] = 'Fă-l draft';
 	}
 
-	$form->html = App\Core\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
+	$form->html = Arsh\Core\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
 }
 
 echo $form->json();

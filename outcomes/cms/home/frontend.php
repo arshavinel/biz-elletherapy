@@ -1,5 +1,5 @@
 <div class="row">
-    <?= App\Core\Module\HTML\Piece::actions(array('Welcome')) ?>
+    <?= Arsh\Core\Module\HTML\Piece::actions(array('Welcome')) ?>
 </div>
 
 <div class="card">

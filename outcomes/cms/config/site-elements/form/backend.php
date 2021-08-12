@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Meta;
-use App\Tables\Config;
+use Arsh\Core\Meta;
+use Brain\Table\Config;
 
 Meta::set('title', 'Elemente site');
 

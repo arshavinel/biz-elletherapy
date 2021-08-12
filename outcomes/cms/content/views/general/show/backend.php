@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Web;
-use App\Validations\CMSValidation;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Arsh\Core\Web;
+use Brain\Validation\CMSValidation;
+use Brain\View\Site;
 
 $source = Site::field('source', "id_view_site = ? AND global = 1", array(Web::param('id')));
 

@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Caracteristici industrii');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Industry\Characteristic::class
+        'table' => Brain\Table\Industry\Characteristic::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -42,14 +42,14 @@ return array(
                 'column'    => 'id_industry',
                 'type'      => 'int',
                 'from'      => array(
-                    'table'     => App\Tables\Industry::class,
+                    'table'     => Brain\Table\Industry::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "required|int",
-                    "inDB:".App\Tables\Industry::class
+                    "inDB:".Brain\Table\Industry::class
                 )
             )
         ),

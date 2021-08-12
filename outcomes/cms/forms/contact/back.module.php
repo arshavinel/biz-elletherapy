@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Formulare contact');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\ContactForm::class
+        'table' => Brain\Table\ContactForm::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

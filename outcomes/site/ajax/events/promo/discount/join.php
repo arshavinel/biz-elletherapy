@@ -1,9 +1,9 @@
 <?php
 
-use App\Core\Mail;
-use App\Validations\SiteValidation;
-use App\Tables\Event\Promo\Discount\Join;
-use App\Tables\Event\Promo\Discount;
+use Arsh\Core\Mail;
+use Brain\Validation\SiteValidation;
+use Brain\Table\Event\Promo\Discount\Join;
+use Brain\Table\Event\Promo\Discount;
 
 $form = SiteValidation::run($_POST,
     array(

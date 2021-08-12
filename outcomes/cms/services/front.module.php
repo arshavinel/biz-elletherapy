@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Web;
-use App\Tables\Service;
+use Arsh\Core\Web;
+use Brain\Table\Service;
 
 return array(
     'breadcrumbs' => array(

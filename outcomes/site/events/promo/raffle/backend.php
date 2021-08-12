@@ -1,12 +1,12 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Web;
-use App\Validations\SiteValidation;
-use App\Tables\Event\Promo\Raffle\Join;
-use App\Tables\Event\Promo\Raffle;
-use App\Tables\Event\Meeting;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Arsh\Core\Web;
+use Brain\Validation\SiteValidation;
+use Brain\Table\Event\Promo\Raffle\Join;
+use Brain\Table\Event\Promo\Raffle;
+use Brain\Table\Event\Meeting;
+use Brain\View\Site;
 
 $meeting = Meeting::first(
     array(

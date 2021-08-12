@@ -1,7 +1,7 @@
 <?php
 
-use App\Validations\SiteValidation;
-use App\Tables\ContactForm;
+use Brain\Validation\SiteValidation;
+use Brain\Table\ContactForm;
 
 $form = SiteValidation::run($_POST, array(
     'name' => array(

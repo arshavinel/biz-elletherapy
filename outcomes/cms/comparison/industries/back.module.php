@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Industrii');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Industry::class
+        'table' => Brain\Table\Industry::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 

@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Table\TableValidationResponse;
-use App\Tables\Event\Promo\Raffle\Join;
-use App\Tables\Event\Promo\Raffle;
-use App\Tables\Event\Meeting;
+use Arsh\Core\Meta;
+use Arsh\Core\Table\TableValidationResponse;
+use Brain\Table\Event\Promo\Raffle\Join;
+use Brain\Table\Event\Promo\Raffle;
+use Brain\Table\Event\Meeting;
 
 Meta::set('title', "Tombole");
 
@@ -16,7 +16,7 @@ return array(
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -38,7 +38,7 @@ return array(
                                     'set'   => "slug:lg = ?",
                                     'where' => "id_raffle = ?"
                                 ),
-                                array(':lg' => $lg, App\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
+                                array(':lg' => $lg, Arsh\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
                             );
                         }
                     }
@@ -59,10 +59,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Event\Promo\Raffle,bg_image"
+                        "required|image:Brain\Table\Event\Promo\Raffle,bg_image"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Event\Promo\Raffle,bg_image"
+                        "optional|image:Brain\Table\Event\Promo\Raffle,bg_image"
                     )
                 )
             )
@@ -179,10 +179,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Event\Promo\Raffle,seo_image"
+                        "required|image:Brain\Table\Event\Promo\Raffle,seo_image"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Event\Promo\Raffle,seo_image"
+                        "optional|image:Brain\Table\Event\Promo\Raffle,seo_image"
                     )
                 )
             )

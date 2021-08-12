@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Web;
-use App\Tables\Article;
+use Arsh\Core\Web;
+use Brain\Table\Article;
 
 return array(
     'breadcrumbs' => array(
@@ -30,7 +30,7 @@ return array(
             'HTML' => array(
                 'type'  => 'link',
                 'href'  => function (string $key, int $id) {
-                    return App\Core\Web::url('site.blog.show', array(
+                    return Arsh\Core\Web::url('site.blog.show', array(
                         'id'    => $id,
                         'slug'  => Article::field('title:lg', "id_article = ?", array($id))
                     ));

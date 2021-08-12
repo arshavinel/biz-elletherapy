@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Web;
-use App\Core\URL;
-use App\Tables\CMS\Admin;
+use Arsh\Core\Web;
+use Arsh\Core\URL;
+use Brain\Table\CMS\Admin;
 
 if (!Admin::loggedInID() && !Web::inGroup('cms.auth.login')) {
 	if (Admin::issetCookieID() && Admin::count(Admin::PRIMARY_KEY .' = '. Admin::getCookieID())) {

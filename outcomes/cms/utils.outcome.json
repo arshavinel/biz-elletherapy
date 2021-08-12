@@ -1,15 +1,19 @@
 {
     "layout": "cms",
     "scss": {
-        "paths": [],
-        "vars": {}
+        "vars": {},
+        "ArshWell": [],
+        "project": []
     },
     "js": {
         "routes": {
             "groups": [],
             "exceptions": []
         },
-        "header": [],
-        "footer": []
+        "header": {
+            "ArshWell": [],
+            "project": []
+        },
+        "footer": {}
     }
 }

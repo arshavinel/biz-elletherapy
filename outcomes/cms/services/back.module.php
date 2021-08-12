@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Servicii');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\Service::class
+        'table' => Brain\Table\Service::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -43,10 +43,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\Service,preview"
+                        "required|image:Brain\Table\Service,preview"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\Service,preview"
+                        "optional|image:Brain\Table\Service,preview"
                     )
                 )
             )

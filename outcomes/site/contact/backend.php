@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Meta;
-use App\Tables\SocialMedia;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Brain\Table\SocialMedia;
+use Brain\View\Site;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

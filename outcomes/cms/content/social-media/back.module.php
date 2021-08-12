@@ -1,18 +1,18 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('title', 'Social Media');
 
 return array(
     'DB' => array(
         'conn'  => 'default',
-        'table' => App\Tables\SocialMedia::class
+        'table' => Brain\Table\SocialMedia::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -42,10 +42,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:App\Tables\SocialMedia,icon"
+                        "required|image:Brain\Table\SocialMedia,icon"
                     ),
                     'update' => array(
-                        "optional|image:App\Tables\SocialMedia,icon"
+                        "optional|image:Brain\Table\SocialMedia,icon"
                     )
                 )
             )

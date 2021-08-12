@@ -1,6 +1,6 @@
 <?php
 
-use App\Core\Meta;
+use Arsh\Core\Meta;
 
 Meta::set('robots', 'noindex, nofollow');
 

@@ -27,10 +27,10 @@ return array(
             'HTML' => array(
                 'type'  => 'link',
                 'href'  => function (string $key, int $id) {
-                    $discount = App\Tables\Event\Promo\Discount::get($id, "id_meeting, title:lg");
-                    $meeting = App\Tables\Event\Meeting::field('title:lg', "id_meeting = ?", array($discount->id_meeting));
+                    $discount = Brain\Table\Event\Promo\Discount::get($id, "id_meeting, title:lg");
+                    $meeting = Brain\Table\Event\Meeting::field('title:lg', "id_meeting = ?", array($discount->id_meeting));
 
-                    return App\Core\Web::url('site.events.promo.discount', array(
+                    return Arsh\Core\Web::url('site.events.promo.discount', array(
                         'meeting'   => $meeting,
                         'discount'  => $discount->translation('title')
                     ));

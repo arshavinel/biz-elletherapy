@@ -1,15 +1,17 @@
 {
     "scss": {
-        "paths": [
-            "plugins/bootstrap",
-            "plugins/select",
-            "plugins/fontawesome",
-            "plugins/handmade/mixins",
-            "plugins/handmade/spacings",
-            "plugins/handmade/defaults",
-            "custom/global"
+        "vars": {},
+        "ArshWell": [
+            "bootstrap",
+            "select",
+            "fontawesome",
+            "handmade/mixins",
+            "handmade/spacings",
+            "handmade/defaults"
         ],
-        "vars": {}
+        "project": [
+            "global"
+        ]
     },
     "js": {
         "routes": {
@@ -18,16 +20,20 @@
             ],
             "exceptions": []
         },
-        "header": [
-            "plugins/jquery",
-            "plugins/jquery-ui",
-            "plugins/popper",
-            "plugins/bootstrap-v4/index",
-            "plugins/bootstrap-v4/util",
-            "plugins/bootstrap-v4/dropdown",
-            "plugins/bootstrap-v4/collapse",
-            "custom/global"
-        ],
-        "footer": []
+        "header": {
+            "ArshWell": [
+                "jquery",
+                "jquery-ui",
+                "popper",
+                "bootstrap-v4/index",
+                "bootstrap-v4/util",
+                "bootstrap-v4/dropdown",
+                "bootstrap-v4/collapse"
+            ],
+            "project": [
+                "global"
+            ]
+        },
+        "footer": {}
     }
 }

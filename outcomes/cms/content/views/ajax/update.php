@@ -1,10 +1,10 @@
 <?php
 
-use App\Core\File;
-use App\Core\Text;
-use App\Validations\CMSValidation;
-use App\Tables\Meditator;
-use App\Views\Site;
+use Arsh\Core\File;
+use Arsh\Core\Text;
+use Brain\Validation\CMSValidation;
+use Brain\Table\Meditator;
+use Brain\View\Site;
 
 if (!empty($_FILES)) {
 	$_POST['data'] = array_replace_recursive($_POST['data'], File::reformat($_FILES['data'], 3));
@@ -15,7 +15,7 @@ $form = CMSValidation::run($_POST, array(
 		"required|int|inArray:0,1"
 	),
 	'source'	=> array(
-		"inDB:App\Views\Site",
+		"inDB:Brain\View\Site",
 		function ($key, $value) {
 			if (!self::error('global')) {
 				if (!Site::count("source = ? AND global = ?", array($value, self::value('global')))) {
@@ -176,7 +176,7 @@ $form = CMSValidation::run($_POST, array(
 							}
 							case Site::TYPES['images']: {
 								if (!self::error('source') && !self::value("data.$type.$info.$lg")) {
-									$count = count((new App\Core\Table\Files\ImageGroup(
+									$count = count((new Arsh\Core\Table\Files\ImageGroup(
 										Site::class,
 										Site::field(
 											Site::PRIMARY_KEY,
@@ -216,7 +216,7 @@ if ($form->valid()) {
 				switch ($type) {
 					case Site::TYPES['image']:
 					case Site::TYPES['imageSEO']: {
-						(new App\Core\Table\Files\Image(
+						(new Arsh\Core\Table\Files\Image(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -228,7 +228,7 @@ if ($form->valid()) {
 						break;
 					}
 					case Site::TYPES['images']: {
-						(new App\Core\Table\Files\ImageGroup(
+						(new Arsh\Core\Table\Files\ImageGroup(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -250,7 +250,7 @@ if ($form->valid()) {
 				switch ($type) {
 					case Site::TYPES['image']:
 					case Site::TYPES['imageSEO']: {
-						(new App\Core\Table\Files\Image(
+						(new Arsh\Core\Table\Files\Image(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -262,7 +262,7 @@ if ($form->valid()) {
 						break;
 					}
 					case Site::TYPES['images']: {
-						(new App\Core\Table\Files\ImageGroup(
+						(new Arsh\Core\Table\Files\ImageGroup(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -274,7 +274,7 @@ if ($form->valid()) {
 						break;
 					}
 					case Site::TYPES['video']: {
-						(new App\Core\Table\Files\Doc(
+						(new Arsh\Core\Table\Files\Doc(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -296,7 +296,7 @@ if ($form->valid()) {
 				switch ($type) {
 					case Site::TYPES['image']:
 					case Site::TYPES['imageSEO']: {
-						(new App\Core\Table\Files\Image(
+						(new Arsh\Core\Table\Files\Image(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -316,7 +316,7 @@ if ($form->valid()) {
 						break;
 					}
 					case Site::TYPES['images']: {
-						(new App\Core\Table\Files\ImageGroup(
+						(new Arsh\Core\Table\Files\ImageGroup(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,
@@ -336,7 +336,7 @@ if ($form->valid()) {
 						break;
 					}
 					case Site::TYPES['video']: {
-						(new App\Core\Table\Files\Doc(
+						(new Arsh\Core\Table\Files\Doc(
 							Site::class,
 							Site::field(
 								Site::PRIMARY_KEY,

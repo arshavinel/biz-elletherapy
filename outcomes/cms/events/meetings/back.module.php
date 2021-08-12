@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Table\TableValidationResponse;
-use App\Tables\Event\Meeting;
+use Arsh\Core\Meta;
+use Arsh\Core\Table\TableValidationResponse;
+use Brain\Table\Event\Meeting;
 
 Meta::set('title', 'Întâlniri evenimente');
 
@@ -14,7 +14,7 @@ return array(
 
     'PHP' => array(
         'validation' => array(
-            'class' => App\Validations\CMSValidation::class
+            'class' => Brain\Validation\CMSValidation::class
         )
     ),
 
@@ -35,7 +35,7 @@ return array(
                                     'set'   => "slug:lg = ?",
                                     'where' => "id_meeting = ?"
                                 ),
-                                array(':lg' => $lg, App\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
+                                array(':lg' => $lg, Arsh\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
                             );
                         }
                     }
@@ -57,14 +57,14 @@ return array(
                 'type'      => 'int',
                 'null'      => true,
                 'from'      => array(
-                    'table'     => App\Tables\Event\Group::class,
+                    'table'     => Brain\Table\Event\Group::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "optional|int",
-                    "inDB:".App\Tables\Event\Group::class.','.App\Tables\Event\Group::PRIMARY_KEY
+                    "inDB:".Brain\Table\Event\Group::class.','.Brain\Table\Event\Group::PRIMARY_KEY
                 )
             )
         ),

@@ -1,12 +1,14 @@
 {
     "scss": {
-        "paths": [
-            "plugins/bootstrap",
-            "plugins/mixins",
-            "plugins/spacings",
-            "custom/site/colors",
-            "custom/global"
+        "vars": {},
+        "ArshWell": [
+            "bootstrap",
+            "handmade/mixins",
+            "handmade/spacings"
         ],
-        "vars": {}
+        "project": [
+            "site/colors",
+            "global"
+        ]
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-use App\Core\Meta;
-use App\Core\Web;
-use App\Validations\SiteValidation;
-use App\Tables\Event\Promo\Discount;
-use App\Tables\Event\Meeting;
-use App\Views\Site;
+use Arsh\Core\Meta;
+use Arsh\Core\Web;
+use Brain\Validation\SiteValidation;
+use Brain\Table\Event\Promo\Discount;
+use Brain\Table\Event\Meeting;
+use Brain\View\Site;
 
 $meeting = Meeting::first(
     array(

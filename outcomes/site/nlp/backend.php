@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\Meta;
-use App\Views\Site;
-use App\Tables\NLP\FAQ;
+use Arsh\Core\Meta;
+use Brain\View\Site;
+use Brain\Table\NLP\FAQ;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));
