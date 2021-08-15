@@ -1,7 +1,10 @@
 caches/
 errors/
-uploads/*
+uploads/
 !uploads/**/.htaccess
 
 # from Atom remote-ftp package
 .ftpquota
+
+# from Visual Studio Code
+.vscode/
