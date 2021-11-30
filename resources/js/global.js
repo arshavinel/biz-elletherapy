@@ -50,8 +50,10 @@ $(document).ready(function () {
     if (typeof(jQuery.fancybox) == "object") {
         jQuery.fancybox.defaults.thumbs.autoStart = true;
     }
-    if (typeof(tinyMCE) == "object") {
-        tinyMCE.baseURL = (Web.site() + 'statics/plugins/tinymce');
-        tinymce.suffix = '.min';
-    }
 });
+
+// NOTE: outside ready() to set before tinyMCE is called from other places
+if (typeof(tinyMCE) == "object") {
+    tinyMCE.baseURL = (Web.site() + 'statics/plugins/tinymce');
+    tinymce.suffix = '.min';
+}

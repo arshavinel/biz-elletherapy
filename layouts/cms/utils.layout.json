@@ -22,8 +22,8 @@
         },
         "header": {
             "ArshWell": [
-                "module/*",
-                "tinymce-v5"
+                "tinymce-v5",
+                "module/*"
             ]
         },
         "footer": {
