@@ -1,9 +1,9 @@
 caches/
+crons/**/error_log
 errors/
 uploads/
 !uploads/**/.htaccess
-
-# from Atom remote-ftp package
+error_log
 .ftpquota
 
 # from Visual Studio Code
