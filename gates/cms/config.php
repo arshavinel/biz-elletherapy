@@ -118,12 +118,6 @@ $cms_config = array(
     	),
 
         array(
-            'icon'  => 'cubes',
-            'text'  => 'Media',
-            'route' => 'cms.media'
-    	),
-
-        array(
             'icon'  => 'address-card',
             'text'  => 'Formulare',
 

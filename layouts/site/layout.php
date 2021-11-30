@@ -112,11 +112,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= Arsh\Core\Web::is('site.media') ? 'active' : '' ?>" href="<?= Arsh\Core\Web::url('site.media') ?>">
-                        MEDIA
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link <?= Arsh\Core\Web::is('site.contact') ? 'active' : '' ?>" href="<?= Arsh\Core\Web::url('site.contact') ?>">
                         CONTACT
                     </a>

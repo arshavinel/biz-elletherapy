@@ -12,7 +12,6 @@
 	},
 
 	"nlp":		["GET",	"nlp"],
-	"media":	["GET",	"media"],
 	"contact":	["GET",	"contact"],
 
 	"appoint":	["GET",	"programeaza-te"],

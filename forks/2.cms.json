@@ -30,7 +30,6 @@
 		"nlp":			["GET|AJAX",	"cms/faq/nlp/[page]"]
 	},
 
-	"media":	["GET|AJAX",	"cms/media/[page]"],
 	"forms":	{
 		"appointment":	["GET|AJAX",	"cms/formulare/programare/[page]"],
 		"contact":		["GET|AJAX",	"cms/formulare/contact/[page]"]
