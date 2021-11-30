@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center margin-0-4th">
     <h2 class="margin-2nd-3rd">
         <?= Brain\View\Site::sentence('lucruri.interesante') ?>
     </h2>
@@ -25,20 +25,5 @@
                 </div>
             </div>
         <?php } ?>
-    </div>
-</div>
-
-<div id="section--media" class="container margin-5th-4th">
-    <div class="row">
-        <div class="col-md-5">
-            <video controls controlsList="play timeline volume nodownload" poster="<?= Brain\View\Site::image('video.thumbnail', 800, 450) ?>" preload="metadata" class="w-100">
-                <source src="<?= Brain\View\Site::video('video') ?>" />
-                <?= Brain\View\Site::sentence('video.incompatibil', NULL, true) ?>
-            </video>
-        </div>
-        <div class="col-md-7">
-            <h3><?= Brain\View\Site::sentence('video.titlu') ?></h3>
-            <?= Brain\View\Site::content('video.descriere') ?>
-        </div>
     </div>
 </div>
