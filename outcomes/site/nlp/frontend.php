@@ -1,12 +1,12 @@
-<?= Arsh\Core\Piece::html('site/banner', array(
-    'background'    => Brain\View\Site::image('banner.imagine', 1400, 650),
-    'sentence'      => Brain\View\Site::sentence('banner.text'),
-    'tag'           => Brain\View\Site::sentence('banner.pagina')
+<?= Arshwell\Monolith\Piece::html('site/banner', array(
+    'background'    => Arshavinel\ElleTherapy\View\Site::image('banner.imagine', 1400, 650),
+    'sentence'      => Arshavinel\ElleTherapy\View\Site::sentence('banner.text'),
+    'tag'           => Arshavinel\ElleTherapy\View\Site::sentence('banner.pagina')
 )) ?>
 
 <div class="bg-color-5">
     <div class="container text-color-7 text-center padding-4th-4th padding-md-2nd-2nd">
-        <?= Brain\View\Site::content('box.1.text') ?>
+        <?= Arshavinel\ElleTherapy\View\Site::content('box.1.text') ?>
     </div>
 </div>
 

@@ -1,13 +1,14 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Validation\CMSValidation;
-use Brain\Table\Service;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Service;
 
 $form = CMSValidation::run($_POST, array(
 	'id' => array(
 		"required|int",
-		"inDB:Brain\Table\Service,id_service"
+		"inDB:Arshavinel\ElleTherapy\Table\Service,id_service"
 	),
 	'ftr' => array(
 		'required|int'
@@ -47,7 +48,7 @@ if ($form->valid()) {
 		$feature['JS']['tooltip']['title'] = 'Fă-l draft';
 	}
 
-	$form->html = Arsh\Core\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
+	$form->html = Arshwell\Monolith\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
 }
 
 echo $form->json();

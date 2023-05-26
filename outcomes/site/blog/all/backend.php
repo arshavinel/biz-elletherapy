@@ -1,9 +1,10 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Web;
-use Brain\Table\Article;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Article;
+use Arshavinel\ElleTherapy\View\Site;
 
 $count = Article::count("visible = 1");
 $limit = 6;
@@ -23,7 +24,7 @@ $articles = Article::select(array(
 ));
 
 if (!$articles && Web::page() > 1) {
-    Web::go(Web::key(), Web::params(), Web::page() - 1, $_GET);
+    Web::go(Web::key(), Web::params(), Web::language(), Web::page() - 1, $_GET);
     exit;
 }
 

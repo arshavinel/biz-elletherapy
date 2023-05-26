@@ -1,25 +1,33 @@
 <?php
 
-use Arsh\Core\Web;
-use Arsh\Core\URL;
-use Brain\Table\CMS\Admin;
+use Arshwell\Monolith\Web;
+use Arshwell\Monolith\URL;
 
-if (!Admin::loggedInID() && !Web::inGroup('cms.auth.login')) {
-	if (Admin::issetCookieID() && Admin::count(Admin::PRIMARY_KEY .' = '. Admin::getCookieID())) {
-		$admin = Admin::first(
+use Arshavinel\ElleTherapy\Table\Account\Admin\Profile;
+use Arshavinel\ElleTherapy\Table\Account\Admin\Log;
+
+if (!Profile::loggedInID() && !Web::inGroup('cms.auth.login')) {
+	if (Profile::issetCookieID() && Profile::count(Profile::PRIMARY_KEY .' = '. Profile::getCookieID())) {
+		$admin = Profile::first(
 	        array(
-	            'columns'   => "cms_admins.email, cms_admins.name, cms_admins.id_cms_role, cms_roles.title AS `role`",
+	            'columns'   => "account_admin_profiles.email, account_admin_profiles.name, account_admin_profiles.id_role, account_admin_roles.title AS `role`",
 	            'join'      => array(
 	                'INNER',
-	                'cms_roles',
-	                "cms_admins.id_cms_role = cms_roles.id_cms_role"
+	                'account_admin_roles',
+	                "account_admin_profiles.id_role = account_admin_roles.id_role"
 	            ),
-	            'where'     => "cms_admins.id_cms_admin = ?"
+	            'where'     => "account_admin_profiles.id_profile = ?"
 	        ),
-	        array(Admin::getCookieID())
+	        array(Profile::getCookieID())
 	    );
 
-	    Admin::loginID($admin->id(), $admin->toArray());
+        $admin->id_log = Log::insert(
+            "id_profile, logged_in_at, from_cookie",
+            "?, UNIX_TIMESTAMP(), 1",
+            array($admin->id())
+        );
+
+	    Profile::loginID($admin->id(), $admin->toArray());
 	}
 	else {
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {

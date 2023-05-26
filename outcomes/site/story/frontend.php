@@ -1,20 +1,20 @@
-<?= Arsh\Core\Piece::html('site/banner', array(
-    'background'    => Brain\View\Site::image('banner.imagine', 1400, 650),
-    'sentence'      => Brain\View\Site::sentence('banner.text'),
-    'tag'           => Brain\View\Site::sentence('banner.pagina')
+<?= Arshwell\Monolith\Piece::html('site/banner', array(
+    'background'    => Arshavinel\ElleTherapy\View\Site::image('banner.imagine', 1400, 650),
+    'sentence'      => Arshavinel\ElleTherapy\View\Site::sentence('banner.text'),
+    'tag'           => Arshavinel\ElleTherapy\View\Site::sentence('banner.pagina')
 )) ?>
 
 <div id="section--story" class="container margin-3rd-3rd">
     <div class="row justify-content-center bg-color-7 padding-4th-4th">
         <div class="col-md-10">
-            <?= Brain\View\Site::content('poveste') ?>
+            <?= Arshavinel\ElleTherapy\View\Site::content('poveste') ?>
         </div>
     </div>
 </div>
 
 <div class="container text-center margin-0-4th">
     <h2 class="margin-2nd-3rd">
-        <?= Brain\View\Site::sentence('lucruri.interesante') ?>
+        <?= Arshavinel\ElleTherapy\View\Site::sentence('lucruri.interesante') ?>
     </h2>
     <div class="row">
         <?php

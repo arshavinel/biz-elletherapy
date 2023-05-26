@@ -1,15 +1,15 @@
 <div class="container padding-4th-4th">
-	<h6>
-		<?= $cms_config['content']['title'] ?>
+    <?= \Arshwell\Monolith\Piece::html("header-logo", [
+        'logo' => [
+            'file' => $_GLOBAL['logos']->get('header'),
+            'text' => $_CMS_CONFIG['content']['title'],
+        ],
+        'appEnv' => $_GLOBAL['appEnv'],
+    ]) ?>
+	<form method="POST" action="<?= Arshwell\Monolith\Web::url('cms.auth.login.submit') ?>" class="border border-primary rounded p-4">
+		<?= Arshwell\Monolith\HTML::formToken() ?>
 		<?php
-		if ($cms_config['content']['demo']) { ?>
-			<sup class="badge badge-danger text-monospace font-weight-light text-capitalize" title="Te afli în varianta demo">DEMO</sup>
-		<?php } ?>
-	</h6>
-	<form method="POST" action="<?= Arsh\Core\Web::url('cms.auth.login.submit') ?>" class="border border-primary rounded p-4">
-		<?= Arsh\Core\HTML::formToken() ?>
-		<?php
-		if (!empty($_GET['url']) && Arsh\Core\Filter::isURL($_GET['url'])) { ?>
+		if (!empty($_GET['url']) && Arshwell\Monolith\Filter::isURL($_GET['url'])) { ?>
 			<input type="hidden" name="url" value="<?= $_GET['url'] ?>" />
 		<?php } ?>
 		<div class="form-group">
@@ -27,14 +27,7 @@
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 
-	<?php
-	if ($cms_config['content']['copyright']) { ?>
-		<div id="cms-copyright" class="padding-2nd-1st">
-			<span class="text-danger">
-				<span class="text-muted">©</span> <b>CMS</b> dezvoltat de echipa
-				<a class="text-color-7" target="_blank" href="https://iscreambrands.ro">iscreambrands</a>.
-			</span>
-			<span class="text-muted nowrap">Toate drepturile rezervate.</span>
-		</div>
-	<?php } ?>
+    <div class="padding-2nd-1st">
+        <?= \Arshwell\Monolith\Piece::html('cms/copyright') ?>
+    </div>
 </div>

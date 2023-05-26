@@ -1,6 +1,6 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title',			'404');
 Meta::set('description',	'404');

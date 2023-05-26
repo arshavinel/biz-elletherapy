@@ -1,12 +1,14 @@
 <?php
 
-use Arsh\Core\Text;
-use Arsh\Core\Web;
-use Arsh\Core\ENV;
-use Brain\Validation\CMSValidation;
-use Brain\Table\CMS\Admin;
+use Arshwell\Monolith\Text;
+use Arshwell\Monolith\Web;
+use Arshwell\Monolith\StaticHandler;
 
-$container = Text::slug(ENV::url());
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Account\Admin\Profile;
+use Arshavinel\ElleTherapy\Table\Account\Admin\Log;
+
+$container = Text::slug(StaticHandler::getEnvConfig('web.URL'));
 
 $form = CMSValidation::run($_POST, array(
     'url' => array(
@@ -14,13 +16,13 @@ $form = CMSValidation::run($_POST, array(
     ),
     $container => array(
         'email' => array(
-            "required|likeDB:".Admin::class
+            "required|likeDB:".Profile::class
         ),
         'password' => array(
             "required",
             function ($key, $value) use ($container) {
                 if (!self::error("$container.email")
-                && !password_verify($value, Admin::field('password', "email LIKE ?", array(self::value("$container.email"))))) {
+                && !password_verify($value, Profile::field('password', "email LIKE ?", array(self::value("$container.email"))))) {
                     return "Parolă incorectă";
                 }
             }
@@ -29,21 +31,27 @@ $form = CMSValidation::run($_POST, array(
 ));
 
 if ($form->valid()) {
-    $admin = Admin::first(
+    $admin = Profile::first(
         array(
-            'columns'   => "cms_admins.email, cms_admins.name, cms_admins.id_cms_role, cms_roles.title AS `role`",
+            'columns'   => "account_admin_profiles.email, account_admin_profiles.name, account_admin_profiles.id_role, account_admin_roles.title AS `role`",
             'join'      => array(
                 'INNER',
-                'cms_roles',
-                'cms_admins.id_cms_role = cms_roles.id_cms_role'
+                'account_admin_roles',
+                'account_admin_profiles.id_role = account_admin_roles.id_role'
             ),
             'where'     => "email LIKE ?"
         ),
         array($form->value("$container.email"))
     );
 
-    Admin::loginID($admin->id(), $admin->toArray());
-    Admin::setCookieID($admin->id(), (3 * 24 * 60 * 60)); // 3 days
+    $admin->id_log = Log::insert(
+        "id_profile, logged_in_at, browser, os, touch, mobile, tablet",
+        "?, UNIX_TIMESTAMP(), ?, ?, ?, ?, ?",
+        array($admin->id(), $form->value('device.browser'), $form->value('device.os'), $form->value('device.touch'), $form->value('device.mobile'), $form->value('device.tablet'))
+    );
+
+    Profile::loginID($admin->id(), $admin->toArray());
+    Profile::setCookieID($admin->id(), (3 * 24 * 60 * 60)); // 3 days
 
     $form->forget();
 

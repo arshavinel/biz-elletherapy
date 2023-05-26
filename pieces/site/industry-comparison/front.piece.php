@@ -1,12 +1,12 @@
 <div class="container text-center">
-    <h1 class="mb-md-4"><?= Brain\View\Site::sentence('comparare-industrii.titlu', NULL, true) ?></h1>
+    <h1 class="mb-md-4"><?= Arshavinel\ElleTherapy\View\Site::sentence('comparare-industrii.titlu', NULL, true) ?></h1>
     <div class="row bg-color-5 text-color-6 text-left">
         <?php
         // between 2 & 4
         $items_per_row = array(
-            'md' => Brain\Table\Config::title('industries_per_row__md'),
-            'lg' => Brain\Table\Config::title('industries_per_row__lg'),
-            'xl' => Brain\Table\Config::title('industries_per_row__xl')
+            'md' => Arshavinel\ElleTherapy\Table\Config::title('industries_per_row__md'),
+            'lg' => Arshavinel\ElleTherapy\Table\Config::title('industries_per_row__lg'),
+            'xl' => Arshavinel\ElleTherapy\Table\Config::title('industries_per_row__xl')
         );
 
         foreach ($industries as $i => $industry) { ?>

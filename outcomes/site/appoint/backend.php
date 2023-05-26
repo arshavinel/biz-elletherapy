@@ -1,10 +1,10 @@
 <?php
 
-use Arsh\Core\Meta;
-use Brain\Validation\SiteValidation;
-use Brain\Table\SocialMedia;
-use Brain\View\Site;
-use Brain\Table\Service;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\View\Site;
+use Arshavinel\ElleTherapy\Table\Service;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

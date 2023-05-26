@@ -1,0 +1,5 @@
+{
+    "translation":  "Arshavinel\\ElleTherapy\\Table\\Translation",
+    "migration":    "Arshavinel\\ElleTherapy\\Table\\Migration",
+    "maintenance":  "Arshavinel\\ElleTherapy\\Table\\Maintenance"
+}

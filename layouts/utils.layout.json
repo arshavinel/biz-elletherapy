@@ -1,18 +1,20 @@
 {
     "scss": {
         "vars": {},
-        "ArshWell": [
-            "bootstrap",
-            "select",
-            "fontawesome",
-            "handmade/mixins",
-            "handmade/spacings",
-            "handmade/defaults"
-        ],
-        "project": [
-            "global"
-        ]
+        "files": {
+            "vendor/arshwell/monolith/resources": [
+                "bootstrap/v4",
+                "font-awesome/v5",
+                "Arshwell/mixins/v1",
+                "Arshwell/spacings/v1",
+                "Arshwell/defaults"
+            ],
+            "resources": [
+                "custom/global"
+            ]
+        }
     },
+
     "js": {
         "routes": {
             "groups": [
@@ -20,20 +22,24 @@
             ],
             "exceptions": []
         },
-        "header": {
-            "ArshWell": [
-                "jquery",
-                "jquery-ui",
-                "popper",
-                "bootstrap-v4/index",
-                "bootstrap-v4/util",
-                "bootstrap-v4/dropdown",
-                "bootstrap-v4/collapse"
-            ],
-            "project": [
-                "global"
-            ]
-        },
-        "footer": {}
+        "files": {
+            "header": {
+                "vendor/arshwell/monolith/resources": [
+                    "jquery/v3",
+                    "jquery-ui/v1",
+                    "floating-ui/v1",
+                    "bootstrap/v4/index",
+                    "bootstrap/v4/util",
+                    "bootstrap/v4/dropdown",
+                    "bootstrap/v4/collapse",
+                    "multiselect",
+                    "URI"
+                ],
+                "resources": [
+                    "custom/global"
+                ]
+            },
+            "footer": {}
+        }
     }
 }

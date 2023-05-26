@@ -1,9 +1,10 @@
 <?php
 
-use Arsh\Core\Table\TableField;
-use Arsh\Core\Meta;
-use Arsh\Core\DB;
-use Brain\View\Site;
+use Arshwell\Monolith\Table\TableField;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\DB;
+
+use Arshavinel\ElleTherapy\View\Site;
 
 $views = array_column(DB::select(array(
     'class'     => Site::class,

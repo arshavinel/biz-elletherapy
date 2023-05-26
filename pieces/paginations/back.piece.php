@@ -1,6 +1,6 @@
 <?php
 
-use Arsh\Core\Web;
+use Arshwell\Monolith\Web;
 
 $links = call_user_func(function () use ($piece): array {
     $piece['icons'] = array(

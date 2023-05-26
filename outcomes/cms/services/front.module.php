@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Table\Service;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Service;
 
 return array(
     'breadcrumbs' => array(

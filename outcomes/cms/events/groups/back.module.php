@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Serii evenimente');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\Event\Group::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\Event\Group::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 

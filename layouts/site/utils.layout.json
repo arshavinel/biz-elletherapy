@@ -1,17 +1,11 @@
 {
     "scss": {
-        "vars": {},
-        "project": [
-            "site/colors",
-            "site/styles"
-        ]
-    },
-    "js": {
-        "routes": {
-            "groups": [],
-            "exceptions": []
-        },
-        "header": {},
-        "footer": {}
+        "files": {
+            "resources": [
+                "custom/site/colors",
+                "custom/site/fonts",
+                "custom/site/styles"
+            ]
+        }
     }
 }

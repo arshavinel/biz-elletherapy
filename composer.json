@@ -1,0 +1,37 @@
+{
+    "name": "arshavinel/elletherapy",
+    "description": "Source code of elletherapy.ro",
+    "type": "project",
+    "license": "proprietary",
+
+    "require": {
+        "arshwell/monolith": "0.3.*",
+        "google/apiclient": "^2.12",
+        "league/color-extractor": "^0.4.0"
+    },
+    "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup",
+        "post-update-cmd": [
+            "Google\\Task\\Composer::cleanup"
+        ]
+    },
+    "extra": {
+        "google/apiclient-services": [""]
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Arshavinel\\ElleTherapy\\": "app/"
+        }
+    },
+
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+
+    "authors": [
+        {
+            "name": "Arshavin",
+            "email": "arsavinwallentyn@gmail.com"
+        }
+    ]
+}

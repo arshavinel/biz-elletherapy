@@ -1,10 +1,10 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Text;
-use Arsh\Core\Web;
-use Brain\Table\Service;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Text;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Service;
 
 $service = Service::first(
     array(
@@ -28,7 +28,7 @@ if (Web::param('slug') != Text::slug($service->translation('title'))) {
     exit;
 }
 
-$seo_description = trim(Text::words(Text::removeAllTags($service->translation('description'))), 100);
+$seo_description = trim(Text::words(Text::removeAllTags($service->translation('description')), 100));
 
 Meta::set('title',			$service->translation('title'));
 Meta::set('description',	$seo_description);

@@ -1,14 +1,16 @@
 {
     "scss": {
         "vars": {},
-        "ArshWell": [
-            "bootstrap",
-            "handmade/mixins",
-            "handmade/spacings"
-        ],
-        "project": [
-            "site/colors",
-            "global"
-        ]
+        "files": {
+            "vendor/arshwell/monolith/resources": [
+                "bootstrap/v4",
+                "Arshwell/mixins/v1",
+                "Arshwell/spacings/v1"
+            ],
+            "resources": [
+                "custom/site/colors",
+                "custom/global"
+            ]
+        }
     }
 }

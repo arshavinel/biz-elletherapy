@@ -1,12 +1,12 @@
 <div class="row">
-    <?= Arsh\Core\Module\HTML\Piece::actions(
-        array('Conținut', 'General', Brain\View\CMS::sentence($source ?: 'view.global', NULL, true)),
+    <?= Arshwell\Monolith\Module\HTML\Piece::actions(
+        array('Conținut', 'General', Arshavinel\ElleTherapy\View\CMS::sentence($source ?: 'view.global', NULL, true)),
         array(
             array(
                 'HTML' => array(
                     'text'  => 'Toate categoriile',
                     'type'  => 'link',
-                    'href'  => Arsh\Core\Web::url('cms.content.views.general.all'),
+                    'href'  => Arshwell\Monolith\Web::url('cms.content.views.general.all'),
                     'class' => "btn btn-sm btn-info"
                 )
             )
@@ -15,7 +15,7 @@
 </div>
 
 <div class="arshmodule">
-    <form method="POST" class="arshmodule-form" action="<?= Arsh\Core\Web::url('cms.content.views.ajax.update') ?>">
+    <form method="POST" class="arshmodule-form" action="<?= Arshwell\Monolith\Web::url('cms.content.views.ajax.update') ?>">
         <input type="hidden" name="global" value="1" />
         <input type="hidden" name="source" value="<?= $source ?>" />
 
@@ -27,11 +27,11 @@
                         <div class="card-header">
                             <b>Conținut</b>
                             <?php
-                            if (Brain\View\Site::isTranslated()) { ?>
+                            if (Arshavinel\ElleTherapy\View\Site::translationTimes() > 1) { ?>
                                 <div style="position: absolute; right: 15px; top: 0;">
-                                    <?= Arsh\Core\Module\HTML\Piece::languages(
-                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES,
-                                        (Brain\View\Site::TRANSLATOR)::LANGUAGES[0],
+                                    <?= Arshwell\Monolith\Module\HTML\Piece::languages(
+                                        (Arshavinel\ElleTherapy\View\Site::TRANSLATOR)::LANGUAGES,
+                                        (Arshavinel\ElleTherapy\View\Site::TRANSLATOR)::LANGUAGES[0],
                                         false
                                     ) ?>
                                 </div>
@@ -42,8 +42,8 @@
                                 <?php
                                 foreach ($views as $i => $view) {
                                     switch ($view->type) {
-                                        case Brain\View\Site::TYPES['sentence']: {
-                                            echo Arsh\Core\Module\HTML\Piece::field(
+                                        case Arshavinel\ElleTherapy\View\Site::TYPES['sentence']: {
+                                            echo Arshwell\Monolith\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -69,13 +69,13 @@
                                                         }
                                                     )
                                                 ),
-                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arshwell\Monolith\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case Brain\View\Site::TYPES['text']: {
-                                            echo Arsh\Core\Module\HTML\Piece::field(
+                                        case Arshavinel\ElleTherapy\View\Site::TYPES['text']: {
+                                            echo Arshwell\Monolith\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -101,13 +101,13 @@
                                                         }
                                                     )
                                                 ),
-                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arshwell\Monolith\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case Brain\View\Site::TYPES['content']: {
-                                            echo Arsh\Core\Module\HTML\Piece::field(
+                                        case Arshavinel\ElleTherapy\View\Site::TYPES['content']: {
+                                            echo Arshwell\Monolith\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -136,13 +136,13 @@
                                                         'tinymce' => true
                                                     )
                                                 ),
-                                                new Arsh\Core\Table\TableField(get_class($view), $view->id(), 'value'),
+                                                new Arshwell\Monolith\Table\TableField(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case Brain\View\Site::TYPES['image']: {
-                                            echo Arsh\Core\Module\HTML\Piece::field(
+                                        case Arshavinel\ElleTherapy\View\Site::TYPES['image']: {
+                                            echo Arshwell\Monolith\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -152,13 +152,13 @@
                                                         'name'      => "data[$view->type][$view->info]"
                                                     )
                                                 ),
-                                                new Arsh\Core\Table\Files\Image(get_class($view), $view->id(), 'value'),
+                                                new Arshwell\Monolith\Table\Files\Image(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
                                         }
-                                        case Brain\View\Site::TYPES['images']: {
-                                            echo Arsh\Core\Module\HTML\Piece::field(
+                                        case Arshavinel\ElleTherapy\View\Site::TYPES['images']: {
+                                            echo Arshwell\Monolith\Module\HTML\Piece::field(
                                                 'value',
                                                 array(
                                                     'HTML' => array(
@@ -168,7 +168,7 @@
                                                         'name'      => "data[$view->type][$view->info]",
                                                     )
                                                 ),
-                                                new Arsh\Core\Table\Files\ImageGroup(get_class($view), $view->id(), 'value'),
+                                                new Arshwell\Monolith\Table\Files\ImageGroup(get_class($view), $view->id(), 'value'),
                                                 (($view)::TRANSLATOR)::LANGUAGES
                                             );
                                             break;
@@ -181,10 +181,10 @@
                 <?php } ?>
             </div>
             <div class="col-lg-4">
-                <?= Arsh\Core\Module\HTML\Piece::saver(array()) ?>
+                <?= Arshwell\Monolith\Module\HTML\Piece::saver(array()) ?>
             </div>
         </div>
     </form>
 
-    <?= Arsh\Core\Module\HTML\Piece::dialog() ?>
+    <?= Arshwell\Monolith\Module\HTML\Piece::dialog() ?>
 </div>

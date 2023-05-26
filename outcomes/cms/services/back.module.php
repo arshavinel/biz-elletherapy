@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Servicii');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\Service::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\Service::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -43,10 +43,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Service,preview"
+                        "required|image:Arshavinel\ElleTherapy\Table\Service,preview"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Service,preview"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Service,preview"
                     )
                 )
             )

@@ -1,21 +1,22 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Table\TableValidationResponse;
-use Brain\Table\Event\Promo\Discount\Join;
-use Brain\Table\Event\Promo\Discount;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount\Join;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount;
 
 Meta::set('title', "Reduceri aplicări");
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
+        'conn'  => 'elletherapy',
         'table' => Join::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => CMSValidation::class
         )
     ),
 
@@ -41,7 +42,8 @@ return array(
                 'column'    => 'id_discount',
                 'type'      => 'int',
                 'null'      => true,
-                'from'      => array(
+
+                'join'      => array(
                     'table'     => Discount::class,
                     'column'    => 'title'
                 )

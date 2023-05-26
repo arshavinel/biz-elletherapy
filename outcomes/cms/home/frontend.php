@@ -1,5 +1,5 @@
 <div class="row">
-    <?= Arsh\Core\Module\HTML\Piece::actions(array('Welcome')) ?>
+    <?= Arshwell\Monolith\Module\HTML\Piece::actions(array('Welcome')) ?>
 </div>
 
 <div class="card">

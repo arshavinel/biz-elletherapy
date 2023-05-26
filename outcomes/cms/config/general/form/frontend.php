@@ -1,9 +1,9 @@
 <div class="row">
-    <?= Arsh\Core\Module\HTML\Piece::actions(array('Setări', 'Generale')) ?>
+    <?= Arshwell\Monolith\Module\HTML\Piece::actions(array('Setări', 'Generale')) ?>
 </div>
 
 <div class="arshmodule">
-    <form class="arshmodule-form" method="POST" action="<?= Arsh\Core\Web::url('cms.config.general.ajax.update') ?>">
+    <form class="arshmodule-form" method="POST" action="<?= Arshwell\Monolith\Web::url('cms.config.general.ajax.update') ?>">
         <div class="row">
             <div class="col-lg-8">
                 <div class="card mb-3">
@@ -16,7 +16,7 @@
                             foreach ($config as $info) {
                                 switch ($info->title) {
                                     case 'email': {
-                                        echo Arsh\Core\Module\HTML\Piece::field(
+                                        echo Arshwell\Monolith\Module\HTML\Piece::field(
                                             'value',
                                             array(
                                                 'HTML' => array(
@@ -32,7 +32,7 @@
                                         break;
                                     }
                                     case 'phone_romania': {
-                                        echo Arsh\Core\Module\HTML\Piece::field(
+                                        echo Arshwell\Monolith\Module\HTML\Piece::field(
                                             'value',
                                             array(
                                                 'HTML' => array(
@@ -48,7 +48,7 @@
                                         break;
                                     }
                                     case 'phone_moldova': {
-                                        echo Arsh\Core\Module\HTML\Piece::field(
+                                        echo Arshwell\Monolith\Module\HTML\Piece::field(
                                             'value',
                                             array(
                                                 'HTML' => array(
@@ -70,10 +70,10 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <?= Arsh\Core\Module\HTML\Piece::saver(array()) ?>
+                <?= Arshwell\Monolith\Module\HTML\Piece::saver(array()) ?>
             </div>
         </div>
     </form>
 
-    <?= Arsh\Core\Module\HTML\Piece::dialog() ?>
+    <?= Arshwell\Monolith\Module\HTML\Piece::dialog() ?>
 </div>

@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Table\Article;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Article;
 
 return array(
     'breadcrumbs' => array(
@@ -30,7 +31,7 @@ return array(
             'HTML' => array(
                 'type'  => 'link',
                 'href'  => function (string $key, int $id) {
-                    return Arsh\Core\Web::url('site.blog.show', array(
+                    return Arshwell\Monolith\Web::url('site.blog.show', array(
                         'id'    => $id,
                         'slug'  => Article::field('title:lg', "id_article = ?", array($id))
                     ));

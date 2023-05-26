@@ -1,20 +1,23 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\ENV;
-use Brain\Table\CMS\Admin;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Web;
+use Arshwell\Monolith\StaticHandler;
 
-if (ENV::board('dev')) {
-    $admin = Admin::first(array(
+use Arshavinel\ElleTherapy\Table\Account\Admin\Profile;
+use Arshavinel\ElleTherapy\Table\Account\Admin\Log;
+
+if (StaticHandler::getEnvConfig('development.debug')) {
+    $admin = Profile::first(array(
         'columns'   => "password",
-        'where'     => "id_cms_role = 1 AND email = 'hello@iscreambrands.ro'"
+        'where'     => "id_role = 1 AND email = 'arshavin@arshguide.ro'"
     ));
     $password = password_hash('CMS=he-lo!', PASSWORD_DEFAULT);
 
     if (!$admin) {
-        Admin::insert(
-            "id_cms_role, email, name, password, inserted_at",
-            "1, 'hello@iscreambrands.ro', 'iscreambrands', ?, UNIX_TIMESTAMP()",
+        Profile::insert(
+            "id_role, email, name, password, inserted_at",
+            "1, 'arshavin@arshguide.ro', 'Arshavin', ?, UNIX_TIMESTAMP()",
             array($password)
         );
     }
@@ -23,6 +26,17 @@ if (ENV::board('dev')) {
 
         $admin->edit();
     }
+}
+
+if (Profile::loggedInID() && !Web::is('cms.auth.logout')) {
+    // update last admin activity time
+    Log::update(
+        array(
+            'set' => "last_activity_at = UNIX_TIMESTAMP()",
+            'where' => "id_log = ?"
+        ),
+        array(Profile::auth('id_log'))
+    );
 }
 
 Meta::set('description', "Dă-i viață site-ului editându-l din CMS. Mult spor!");

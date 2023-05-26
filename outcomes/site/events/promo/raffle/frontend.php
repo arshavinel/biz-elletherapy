@@ -3,13 +3,13 @@
         <table class="w-100">
             <tr class="padding-3rd-3rd"><td>
                 <?php
-                if (Brain\Table\CMS\Admin::LoggedInID() || Brain\Table\CMS\Admin::issetCookieID()) { ?>
+                if (Arshavinel\ElleTherapy\Table\Account\Admin\Profile::LoggedInID() || Arshavinel\ElleTherapy\Table\Account\Admin\Profile::issetCookieID()) { ?>
                     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="user-tab--join" data-toggle="pill" href="#user-content--join" role="tab" aria-controls="user-content--join" aria-selected="true">
-                            <?= Brain\View\Site::sentence('form.submit.text') ?>
+                            <?= Arshavinel\ElleTherapy\View\Site::sentence('form.submit.text') ?>
                         </a>
                         <a class="nav-link" id="user-tab--winner" data-toggle="pill" href="#user-content--winner" role="tab" aria-controls="user-content--winner" aria-selected="false">
-                            <?= Brain\View\Site::sentence('buton.alege.text') ?>
+                            <?= Arshavinel\ElleTherapy\View\Site::sentence('buton.alege.text') ?>
                         </a>
                     </div>
                 <?php } ?>
@@ -19,23 +19,23 @@
                     <div class="tab-pane fade show active" id="user-content--join" role="tabpanel" aria-labelledby="user-tab--join">
                         <?php
                         if ($winner == NULL) { ?>
-                            <form id="user-content--join-form" action="<?= Arsh\Core\Web::url('site.ajax.events.promo.raffle.join') ?>">
+                            <form id="user-content--join-form" action="<?= Arshwell\Monolith\Web::url('site.ajax.events.promo.raffle.join') ?>">
                                 <input type="hidden" name="id_raffle" value="<?= $raffle->id() ?>" />
 
                                 <b class="text-message-green" confirmation="join"
                                 style="<?= empty($_SESSION['events'][$meeting->id()]['raffles'][$raffle->id()]['name']) ? 'display: none;' : '' ?>">
-                                    <?= Brain\View\Site::text('confirmare', array(
+                                    <?= Arshavinel\ElleTherapy\View\Site::text('confirmare', array(
                                         'name' => '<u><span field="name">'.($_SESSION['events'][$meeting->id()]['raffles'][$raffle->id()]['name'] ?? '').'</span></u>'
                                     )) ?>
                                 </b>
 
                                 <div class="mt-3 mb-5">
                                     <h2>
-                                        <b><?= Brain\View\Site::sentence('titlu.event') ?></b>
+                                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu.event') ?></b>
                                         <i>"<?= $meeting->translation('title') ?>"</i>
                                     </h2>
                                     <h4>
-                                        <b><?= Brain\View\Site::sentence('titlu.tombolă') ?></b>
+                                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu.tombolă') ?></b>
                                         <i><?= $raffle->translation('title') ?></i>
                                     </h4>
                                 </div>
@@ -45,22 +45,22 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6 mb-1 text-right">
                                         <input type="text" class="form-control d-inline-block w-auto mw-100" name="first_name" value="<?= $form->value('first_name') ?>"
-                                        placeholder="<?= Brain\View\Site::sentence('form.câmp.prenume.placeholder') ?> *" />
+                                        placeholder="<?= Arshavinel\ElleTherapy\View\Site::sentence('form.câmp.prenume.placeholder') ?> *" />
                                         <span class="text-message-pink" form-error="first_name"></span>
                                     </div>
                                     <div class="col-6 mb-1 text-left">
                                         <input type="text" class="form-control d-inline-block w-auto mw-100" name="last_name" value="<?= $form->value('last_name') ?>"
-                                        placeholder="<?= Brain\View\Site::sentence('form.câmp.nume.placeholder') ?> *" />
+                                        placeholder="<?= Arshavinel\ElleTherapy\View\Site::sentence('form.câmp.nume.placeholder') ?> *" />
                                         <span class="text-message-pink" form-error="last_name"></span>
                                     </div>
                                     <div class="col-6 mb-1 text-right">
                                         <input type="text" class="form-control d-inline-block w-auto mw-100" name="phone" value="<?= $form->value('phone') ?>"
-                                        placeholder="<?= Brain\View\Site::sentence('form.câmp.telefon.placeholder') ?>" />
+                                        placeholder="<?= Arshavinel\ElleTherapy\View\Site::sentence('form.câmp.telefon.placeholder') ?>" />
                                         <span class="text-message-pink" form-error="phone"></span>
                                     </div>
                                     <div class="col-6 mb-1 text-left">
                                         <input type="text" class="form-control d-inline-block w-auto mw-100" name="email" value="<?= $form->value('email') ?>"
-                                        placeholder="<?= Brain\View\Site::sentence('form.câmp.email.placeholder') ?>" />
+                                        placeholder="<?= Arshavinel\ElleTherapy\View\Site::sentence('form.câmp.email.placeholder') ?>" />
                                         <span class="text-message-pink" form-error="email"></span>
                                     </div>
                                 </div>
@@ -68,9 +68,9 @@
                                 <div class="form-group form-check d-inline-block">
                                     <input type="checkbox" class="form-check-input" name="privacy" value="1" id="contact-form--privacy" />
                                     <label class="form-check-label d-sm-inline-block text-left" for="contact-form--privacy">
-                                        <?= Brain\View\Site::sentence('form.politică', array(
-                                            'link' => '<a target="_blank" class="text-color-1" href="'. Arsh\Core\Web::url('site.legal.privacy') .'">'.
-                                                Brain\View\Site::sentence('form.politică.link.text') .
+                                        <?= Arshavinel\ElleTherapy\View\Site::sentence('form.politică', array(
+                                            'link' => '<a target="_blank" class="text-color-1" href="'. Arshwell\Monolith\Web::url('site.legal.privacy') .'">'.
+                                                Arshavinel\ElleTherapy\View\Site::sentence('form.politică.link.text') .
                                             '</a>'
                                         )) ?> <span class="text-message-pink">*</span>
                                         <small class="text-message-pink" form-error="privacy"></small>
@@ -78,11 +78,11 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <input type="submit" class="btn-7-2 nowrap" value="<?= Brain\View\Site::sentence('form.submit.text') ?>" />
+                                    <input type="submit" class="btn-7-2 nowrap" value="<?= Arshavinel\ElleTherapy\View\Site::sentence('form.submit.text') ?>" />
                                 </div>
                                 <div class="my-2">
                                     <b class="d-inline-block text-message-green" data-response="message">
-                                        <?= Brain\View\Site::sentence('form.răspuns') ?>
+                                        <?= Arshavinel\ElleTherapy\View\Site::sentence('form.răspuns') ?>
                                     </b>
                                 </div>
                             </form>
@@ -92,27 +92,27 @@
                         <div id="user-content--join-expired" style="<?= $winner == NULL ? 'display: none;' : '' ?>">
                             <div class="mt-3 mb-5">
                                 <h2>
-                                    <b><?= Brain\View\Site::sentence('titlu.event') ?></b>
+                                    <b><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu.event') ?></b>
                                     <i>"<?= $meeting->translation('title') ?>"</i>
                                 </h2>
                                 <h4>
-                                    <b><?= Brain\View\Site::sentence('titlu.tombolă') ?></b>
+                                    <b><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu.tombolă') ?></b>
                                     <i><?= $raffle->translation('title') ?></i>
                                 </h4>
                             </div>
 
-                            <?= Brain\View\Site::content('tombolă.expirată.text') ?>
+                            <?= Arshavinel\ElleTherapy\View\Site::content('tombolă.expirată.text') ?>
                         </div>
                     </div>
 
                     <!-- Generate winner -->
                     <div class="tab-pane fade" id="user-content--winner" role="tabpanel" aria-labelledby="user-tab--winner">
-                        <form action="<?= Arsh\Core\Web::url('site.ajax.events.promo.raffle.pick') ?>">
+                        <form action="<?= Arshwell\Monolith\Web::url('site.ajax.events.promo.raffle.pick') ?>">
                             <input type="hidden" name="id_raffle" value="<?= $raffle->id() ?>" />
 
                             <div class="text-center mb-4">
                                 <input type="submit" <?= ($winner == NULL ? '' : 'disabled="disabled" style="cursor: not-allowed;"') ?>
-                                class="btn-7-2 nowrap" value="<?= Brain\View\Site::sentence('buton.alege.text') ?>" />
+                                class="btn-7-2 nowrap" value="<?= Arshavinel\ElleTherapy\View\Site::sentence('buton.alege.text') ?>" />
                             </div>
                             <div class="text-message-green" confirmation="generate"
                             style="<?= ($winner == NULL ? 'display: none;' : '') ?>">

@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Caracteristici industrii');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\Industry\Characteristic::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\Industry\Characteristic::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -41,15 +41,16 @@ return array(
             'DB' => array(
                 'column'    => 'id_industry',
                 'type'      => 'int',
-                'from'      => array(
-                    'table'     => Brain\Table\Industry::class,
+
+                'join'      => array(
+                    'table'     => Arshavinel\ElleTherapy\Table\Industry::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "required|int",
-                    "inDB:".Brain\Table\Industry::class
+                    "inDB:".Arshavinel\ElleTherapy\Table\Industry::class
                 )
             )
         ),

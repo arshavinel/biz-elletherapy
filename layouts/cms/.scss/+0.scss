@@ -1,15 +1,17 @@
 body {
     background-color: map-get($cms-colors, 8);
-    font-family: 'Lucida Sans', 'Lucida Sans Unicode';
-    font-size: 13px;
 }
 
 nav {
     background-color: map-get($cms-colors, 1);
     color: map-get($cms-colors, 5);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 
     .navbar-brand {
-        @include arsh--linear-gradient-3params(left, map-get($cms-colors, 6), map-get($cms-colors, 7));
+        @include arsh--linear-gradient(left, map-get($cms-colors, 6), map-get($cms-colors, 7));
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -19,6 +21,9 @@ nav {
         width: auto;
         text-overflow: ellipsis;
 
+        img {
+            max-height: 36px;
+        }
         sup {
             -webkit-text-fill-color: initial;
         }
@@ -49,6 +54,10 @@ nav {
                 }
             }
             .dropdown {
+                img {
+                    max-height: 46px;
+                }
+
                 div[data-toggle="dropdown"] {
                     cursor: pointer;
                     position: relative;
@@ -59,7 +68,7 @@ nav {
                     }
                     .group {
                         color: map-get($cms-colors, 4);
-                        font-size: 11px;
+                        font-size: smaller;
                     }
 
                     i {
@@ -112,27 +121,10 @@ nav {
             }
             ul {
                 a {
-                    font-size: 12px;
+                    font-size: smaller;
                     padding-top: 8px;
                     padding-bottom: 8px;
                 }
-            }
-        }
-    }
-}
-
-#app {
-    margin-top: 56px; // margin being here, doesn't affect the iframes
-
-    #cms-copyright {
-        a {
-            text-shadow: 0 0 #000;
-            letter-spacing: 1px;
-
-            &:hover {
-                color: #dc3545;
-                text-shadow: 0 0 #000;
-                text-decoration: underline;
             }
         }
     }

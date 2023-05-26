@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Table\Logo;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Identity\Logo;
 
 return array(
     'breadcrumbs' => array(

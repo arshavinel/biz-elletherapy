@@ -1,8 +1,8 @@
 <?php
 
-use Brain\Validation\SiteValidation;
-use Brain\Table\Event\Promo\Raffle\Join;
-use Brain\Table\Event\Promo\Raffle;
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle\Join;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle;
 
 $form = SiteValidation::run($_POST,
     array(

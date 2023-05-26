@@ -1,17 +1,11 @@
 {
-    "layout": "site",
-    "scss": {
-        "paths": [],
-        "vars": {}
-    },
     "js": {
-        "routes": {
-            "groups": [],
-            "exceptions": []
-        },
-        "header": [
-            "plugins/bootstrap-v4/tab"
-        ],
-        "footer": []
+        "files": {
+            "header": {
+                "vendor/arshwell/monolith/resources": [
+                    "bootstrap/v4/tab"
+                ]
+            }
+        }
     }
 }

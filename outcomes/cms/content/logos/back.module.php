@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Logo-uri');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\Logo::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\Identity\Logo::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -39,10 +39,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Logo,favicon_cms"
+                        "required|image:Arshavinel\ElleTherapy\Table\Identity\Logo,favicon_cms"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Logo,favicon_cms"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Identity\Logo,favicon_cms"
                     )
                 )
             )
@@ -53,10 +53,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Logo,favicon_site"
+                        "required|image:Arshavinel\ElleTherapy\Table\Identity\Logo,favicon_site"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Logo,favicon_site"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Identity\Logo,favicon_site"
                     )
                 )
             )
@@ -67,10 +67,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Logo,header"
+                        "required|image:Arshavinel\ElleTherapy\Table\Identity\Logo,header"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Logo,header"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Identity\Logo,header"
                     )
                 )
             )
@@ -81,10 +81,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Logo,useful"
+                        "required|image:Arshavinel\ElleTherapy\Table\Identity\Logo,useful"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Logo,useful"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Identity\Logo,useful"
                     )
                 )
             )

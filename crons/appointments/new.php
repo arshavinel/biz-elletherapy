@@ -2,20 +2,21 @@
 
 // run it once per day (in the morning)
 
-use Arsh\Core\Session;
-use Arsh\Core\Mail;
-use Arsh\Core\ENV;
-use Arsh\Core\Web;
-use Arsh\Core\DB;
-use Brain\Table\Form\Appointment;
-use Brain\Table\Config;
+use Arshwell\Monolith\Session;
+use Arshwell\Monolith\Mail;
+use Arshwell\Monolith\StaticHandler;
+use Arshwell\Monolith\Web;
+use Arshwell\Monolith\DB;
+
+use Arshavinel\ElleTherapy\Table\Form\Appointment;
+use Arshavinel\ElleTherapy\Table\Config;
 
 session_start();
 
 require("../../ArshWell/Core/ENV.php");
 
 DB::connect('default');
-Session::set(ENV::url().ENV::db('conn.default.name'));
+Session::set(StaticHandler::getEnvConfig('web.URL').ENV::db('conn.default.name'));
 Web::fetch();
 
 $appointments = Appointment::select(array(
@@ -27,7 +28,7 @@ if ($appointments) {
     Mail::send(
         'appointments/new',
         Config::title('email'),
-        Brain\View\Site::sentence('subiect'),
+        Arshavinel\ElleTherapy\View\Site::sentence('subiect'),
         array(
             'appointments' => $appointments
         )

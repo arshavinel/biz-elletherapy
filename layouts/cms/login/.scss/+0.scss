@@ -1,12 +1,3 @@
-#cms-copyright {
-	a {
-		text-shadow: 0 0 #000;
-		letter-spacing: 1px;
-
-		&:hover {
-			color: #dc3545;
-			text-shadow: 0 0 #000;
-			text-decoration: underline;
-		}
-	}
+body {
+    user-select: none;
 }

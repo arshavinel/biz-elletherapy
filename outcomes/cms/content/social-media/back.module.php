@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Social Media');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\SocialMedia::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\SocialMedia::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -42,10 +42,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\SocialMedia,icon"
+                        "required|image:Arshavinel\ElleTherapy\Table\SocialMedia,icon"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\SocialMedia,icon"
+                        "optional|image:Arshavinel\ElleTherapy\Table\SocialMedia,icon"
                     )
                 )
             )

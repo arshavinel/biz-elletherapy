@@ -1,8 +1,9 @@
 <?php
 
-use Arsh\Core\Meta;
-use Brain\Table\SocialMedia;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Table\SocialMedia;
+use Arshavinel\ElleTherapy\View\Site;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

@@ -10,26 +10,26 @@
 		<table id="header">
 			<tr>
 		        <td align="left">
-					<h3><?= Brain\View\Site::sentence('titlu') ?></h3>
+					<h3><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu') ?></h3>
 				</td>
 				<td align="right">
-					<a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
-						<img src="<?= (new Arsh\Core\Table\Files\Image('Brain\Table\Logo', Brain\Table\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
+					<a target="_blank" href="<?= Arshwell\Monolith\Web::site() ?>">
+						<img src="<?= (new Arshwell\Monolith\Table\Files\Image('Arshavinel\ElleTherapy\Table\Identity\Logo', Arshavinel\ElleTherapy\Table\Identity\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
 					</a>
 				</td>
 			</tr>
 		</table>
 
-		<p><?= Brain\View\Site::content('conținut') ?></p>
+		<p><?= Arshavinel\ElleTherapy\View\Site::content('conținut') ?></p>
 
 		<div class="table-responsive">
 			<table border="1" cellpadding="5" cellspacing="0">
 				<tr>
-					<th><?= Brain\View\Site::sentence('tabel.coloană.id') ?></th>
-					<th><?= Brain\View\Site::sentence('tabel.coloană.nume') ?></th>
-					<th><?= Brain\View\Site::sentence('tabel.coloană.email') ?></th>
-					<th><?= Brain\View\Site::sentence('tabel.coloană.telefon') ?></th>
-					<th><?= Brain\View\Site::sentence('tabel.coloană.adăugat') ?></th>
+					<th><?= Arshavinel\ElleTherapy\View\Site::sentence('tabel.coloană.id') ?></th>
+					<th><?= Arshavinel\ElleTherapy\View\Site::sentence('tabel.coloană.nume') ?></th>
+					<th><?= Arshavinel\ElleTherapy\View\Site::sentence('tabel.coloană.email') ?></th>
+					<th><?= Arshavinel\ElleTherapy\View\Site::sentence('tabel.coloană.telefon') ?></th>
+					<th><?= Arshavinel\ElleTherapy\View\Site::sentence('tabel.coloană.adăugat') ?></th>
 				</tr>
 				<?php
 				foreach ($mail['contacts'] as $contact) { ?>
@@ -44,15 +44,15 @@
 			</table>
 		</div>
 
-		<p><?= Brain\View\Site::content('contacte', array(
-			'link' => '<a target="_blank" href="'. Arsh\Core\Web::url('cms.forms.contact') .'">'.
-				Brain\View\Site::sentence('contacte.link.text') .
+		<p><?= Arshavinel\ElleTherapy\View\Site::content('contacte', array(
+			'link' => '<a target="_blank" href="'. Arshwell\Monolith\Web::url('cms.forms.contact') .'">'.
+				Arshavinel\ElleTherapy\View\Site::sentence('contacte.link.text') .
 			'</a>'
 		)) ?></p>
 
 		<div id="footer">
-            <a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
-				Melena Therapy
+            <a target="_blank" href="<?= Arshwell\Monolith\Web::site() ?>">
+				Elle Therapy
 			</a>
         </div>
 	</div>

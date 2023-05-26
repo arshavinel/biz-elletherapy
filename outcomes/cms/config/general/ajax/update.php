@@ -1,7 +1,7 @@
 <?php
 
-use Brain\Validation\CMSValidation;
-use Brain\Table\Config;
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Config;
 
 $form = CMSValidation::run($_POST, array(
     'email' => array(

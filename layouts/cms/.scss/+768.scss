@@ -1,11 +1,11 @@
 nav {
     #navigation-menu {
-        height: calc(100vh - 56px);
         overflow-x: hidden;
         overflow-y: auto;
         position: absolute;
-        top: 56px;
+        top: 100%;
         left: 0;
+        min-height: calc(100vh - 100%); // a weird hack
 
         &::-webkit-scrollbar {
             width: 0px;  /* Remove scrollbar space */

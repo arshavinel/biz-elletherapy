@@ -1,0 +1,35 @@
+.header-logo--container {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 5px;
+    @include arsh--border-radius(5px);
+    overflow: hidden;
+
+    // change background color so any png logo is visible
+    backdrop-filter: contrast(0.1);
+
+    .header-logo--image {
+        &.type--dev {
+            max-width: calc(100% - 53px);
+        }
+        &.type--stage {
+            max-width: calc(100% - 65px);
+        }
+    }
+
+    .header-logo--app-badge {
+        cursor: help;
+        position: relative;
+        top: -3px;
+        color: #fff;
+        background-color: #dc3545;
+        display: inline-flex;
+        padding: 5px 8px;
+        line-height: 20px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        -webkit-text-fill-color: initial;
+        @include arsh--border-radius(0.25rem);
+    }
+}

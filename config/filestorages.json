@@ -1,0 +1,8 @@
+{
+    "elletherapy": {
+        "paths": {
+            "statics": null,
+            "uploads": "%env(FILESTORAGE__ELLETHERAPY__LOCATION_UPLOADS)%"
+        }
+    }
+}

@@ -1,18 +1,18 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('title', 'Articole');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
-        'table' => Brain\Table\Article::class
+        'conn'  => 'elletherapy',
+        'table' => Arshavinel\ElleTherapy\Table\Article::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -39,10 +39,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Article,preview"
+                        "required|image:Arshavinel\ElleTherapy\Table\Article,preview"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Article,preview"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Article,preview"
                     )
                 )
             )
@@ -52,15 +52,16 @@ return array(
             'DB' => array(
                 'column'    => 'id_category',
                 'type'      => 'int',
-                'from'      => array(
-                    'table'     => Brain\Table\Article\Category::class,
+
+                'join'      => array(
+                    'table'     => Arshavinel\ElleTherapy\Table\Article\Category::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "required|int",
-                    "inDB:".Brain\Table\Article\Category::class.','.Brain\Table\Article\Category::PRIMARY_KEY
+                    "inDB:".Arshavinel\ElleTherapy\Table\Article\Category::class.','.Arshavinel\ElleTherapy\Table\Article\Category::PRIMARY_KEY
                 )
             )
         ),

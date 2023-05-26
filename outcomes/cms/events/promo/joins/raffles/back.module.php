@@ -1,21 +1,22 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Table\TableValidationResponse;
-use Brain\Table\Event\Promo\Raffle\Join;
-use Brain\Table\Event\Promo\Raffle;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle\Join;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle;
 
 Meta::set('title', "Tombole aplicări");
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
+        'conn'  => 'elletherapy',
         'table' => Join::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => CMSValidation::class
         )
     ),
 
@@ -40,7 +41,8 @@ return array(
             'DB' => array(
                 'column'    => 'id_raffle',
                 'type'      => 'int',
-                'from'      => array(
+
+                'join'      => array(
                     'table'     => Raffle::class,
                     'column'    => 'title'
                 )

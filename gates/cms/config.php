@@ -1,27 +1,27 @@
 <?php
 
-use Arsh\Core\Table\Files\Image;
-use Arsh\Core\Web;
-use Brain\Table\Form\Appointment;
-use Brain\Table\ContactForm;
-use Brain\Table\Logo;
+use Arshwell\Monolith\Table\Files\Image;
+use Arshwell\Monolith\Web;
 
-$cms_config = array(
+use Arshavinel\ElleTherapy\Table\Form\Appointment;
+use Arshavinel\ElleTherapy\Table\ContactForm;
+use Arshavinel\ElleTherapy\Table\Identity\Logo;
+
+$_CMS_CONFIG = array(
     'content' => array(
         'favicon'   => (new Image(
             Logo::class,
             Logo::field('id_logo', "visible = 1"),
             'favicon_cms'
         ))->url('tinny'),
-        'demo'      => Arsh\Core\ENV::root() && Arsh\Core\ENV::board('dev'),
-        'title'     => "CMS Melena",
+        'title'     => "CMS Elle",
         'routes'    => array(
             'site'      => 'site.home',
             'cms'       => 'cms.home',
-            'admins'    => 'cms.admins',
+            'admins'    => 'cms.accounts.admins.profiles',
+            'logs'      => 'cms.accounts.admins.logs',
             'logout'    => 'cms.auth.logout'
         ),
-        'copyright' => true, // show ISB credits for this CMS
     ),
     'menu' => array(
         array(

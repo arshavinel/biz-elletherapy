@@ -1,9 +1,10 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Web;
-use Brain\Validation\CMSValidation;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\View\Site;
 
 $source = Site::field('source', "id_view_site = ? AND global = 1", array(Web::param('id')));
 

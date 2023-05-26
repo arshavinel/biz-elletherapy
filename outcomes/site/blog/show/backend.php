@@ -1,10 +1,10 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Text;
-use Arsh\Core\Web;
-use Brain\Table\Article;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Text;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Article;
 
 $article = Article::first(
     array(

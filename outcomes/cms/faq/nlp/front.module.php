@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Table\NLP\FAQ;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\NLP\FAQ;
 
 return array(
     'breadcrumbs' => array(

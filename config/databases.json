@@ -1,0 +1,16 @@
+{
+    "conn": {
+
+        "elletherapy": {
+            "host":     "localhost",
+            "name":     "%env(DB_CONN__ELLETHERAPY__NAME)%",
+            "charset":  "utf8",
+            "prefix":   "et_",
+            "username": "%env(DB_USER_NAME)%",
+            "password": "%env(DB_USER_PASS)%"
+        }
+
+    },
+
+    "backups": {}
+}

@@ -1,22 +1,24 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Table\TableValidationResponse;
-use Brain\Table\Event\Promo\Raffle\Join;
-use Brain\Table\Event\Promo\Raffle;
-use Brain\Table\Event\Meeting;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Table\TableValidationResponse;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle\Join;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Raffle;
+use Arshavinel\ElleTherapy\Table\Event\Meeting;
 
 Meta::set('title', "Tombole");
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
+        'conn'  => 'elletherapy',
         'table' => Raffle::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => CMSValidation::class
         )
     ),
 
@@ -38,7 +40,7 @@ return array(
                                     'set'   => "slug:lg = ?",
                                     'where' => "id_raffle = ?"
                                 ),
-                                array(':lg' => $lg, Arsh\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
+                                array(':lg' => $lg, Arshwell\Monolith\Text::slug($form->value("data.title.$lg")), $form->value('id'))
                             );
                         }
                     }
@@ -59,10 +61,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Event\Promo\Raffle,bg_image"
+                        "required|image:Arshavinel\ElleTherapy\Table\Event\Promo\Raffle,bg_image"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Event\Promo\Raffle,bg_image"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Event\Promo\Raffle,bg_image"
                     )
                 )
             )
@@ -73,7 +75,8 @@ return array(
                 'column'    => 'id_meeting',
                 'type'      => 'int',
                 'null'      => true,
-                'from'      => array(
+
+                'join'      => array(
                     'table'     => Meeting::class,
                     'column'    => 'title'
                 )
@@ -91,7 +94,8 @@ return array(
                 'column'    => 'winner',
                 'type'      => 'int',
                 'null'      => true,
-                'from'      => array(
+
+                'join'      => array(
                     'table'     => Join::class,
                     'column'    => 'name'
                 )
@@ -179,10 +183,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Event\Promo\Raffle,seo_image"
+                        "required|image:Arshavinel\ElleTherapy\Table\Event\Promo\Raffle,seo_image"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Event\Promo\Raffle,seo_image"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Event\Promo\Raffle,seo_image"
                     )
                 )
             )

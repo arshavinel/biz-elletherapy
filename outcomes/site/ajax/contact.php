@@ -1,7 +1,7 @@
 <?php
 
-use Brain\Validation\SiteValidation;
-use Brain\Table\ContactForm;
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\Table\ContactForm;
 
 $form = SiteValidation::run($_POST, array(
     'name' => array(

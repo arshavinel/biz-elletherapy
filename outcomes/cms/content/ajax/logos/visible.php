@@ -1,13 +1,14 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Validation\CMSValidation;
-use Brain\Table\Logo;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Identity\Logo;
 
 $form = CMSValidation::run($_POST, array(
 	'id' => array(
 		"required|int",
-		"inDB:Brain\Table\Logo,id_logo"
+		"inDB:Arshavinel\ElleTherapy\Table\Identity\Logo,id_logo"
 	),
 	'ftr' => array(
 		'required|is_string|equal:0'
@@ -56,7 +57,7 @@ if ($form->valid()) {
 			$feature['JS']['tooltip']['title'] = 'Ascunde';
 		}
 
-		$form->html = Arsh\Core\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
+		$form->html = Arshwell\Monolith\Module\HTML\Piece::feature($form->value('ftr'), $feature, $form->value('id'));
 	}
 }
 

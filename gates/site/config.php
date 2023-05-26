@@ -1,6 +1,6 @@
 <?php
 
-use Arsh\Core\Meta;
+use Arshwell\Monolith\Meta;
 
 Meta::set('robots', 'index, follow');
 

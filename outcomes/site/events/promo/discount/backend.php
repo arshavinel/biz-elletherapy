@@ -1,11 +1,11 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Web;
-use Brain\Validation\SiteValidation;
-use Brain\Table\Event\Promo\Discount;
-use Brain\Table\Event\Meeting;
-use Brain\View\Site;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount;
+use Arshavinel\ElleTherapy\Table\Event\Meeting;
 
 $meeting = Meeting::first(
     array(

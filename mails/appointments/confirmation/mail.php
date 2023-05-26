@@ -10,21 +10,21 @@
 		<table id="header">
 			<tr>
 		        <td align="left">
-					<h3><?= Brain\View\Site::sentence('titlu', NULL, true) ?></h3>
+					<h3><?= Arshavinel\ElleTherapy\View\Site::sentence('titlu', NULL, true) ?></h3>
 				</td>
 				<td align="right">
-					<a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
-						<img src="<?= (new Arsh\Core\Table\Files\Image('Brain\Table\Logo', Brain\Table\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
+					<a target="_blank" href="<?= Arshwell\Monolith\Web::site() ?>">
+						<img src="<?= (new Arshwell\Monolith\Table\Files\Image('Arshavinel\ElleTherapy\Table\Identity\Logo', Arshavinel\ElleTherapy\Table\Identity\Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium') ?>" />
 					</a>
 				</td>
 			</tr>
 		</table>
 
-		<p><?= Brain\View\Site::content('conținut', $mail['fields'], true) ?></p>
+		<p><?= Arshavinel\ElleTherapy\View\Site::content('conținut', $mail['fields'], true) ?></p>
 
 		<div id="footer">
-            <a target="_blank" href="<?= Arsh\Core\Web::site() ?>">
-				Melena Therapy
+            <a target="_blank" href="<?= Arshwell\Monolith\Web::site() ?>">
+				Elle Therapy
 			</a>
         </div>
 	</div>

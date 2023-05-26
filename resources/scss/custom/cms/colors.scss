@@ -1,0 +1,12 @@
+$cms-colors: (
+    1: #21262D, // raisin black
+    2: #282d36, // gunmetal black
+    3: #3d3d3d, // onyx (dark)
+    4: #acacac, // silver chalice
+    5: #c3c3c3, // silver
+    6: #F5CE31, // jonquil (yellow)
+    7: #E8BC0B, // saffron (yellow)
+    8: #eeeeee, // cultured (gray)
+) !default;
+
+@include elletherapy--color-classes($cms-colors);

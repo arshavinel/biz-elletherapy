@@ -1,0 +1,74 @@
+a {
+    color: map-get($site-colors, 2);
+}
+
+$arrows-down--size: 20px;
+$arrows-down--speed: 3s;
+
+@keyframes arrows-animation {
+    0% {
+        @include arsh--opacity(0);
+        @include arsh--transform(translate($arrows-down--size/-6, $arrows-down--size*4/-6) rotate(-45deg));
+    }
+    50% {
+        @include arsh--opacity(1);
+        @include arsh--transform(translate($arrows-down--size/-6, 0px) rotate(-45deg));
+    }
+    100% {
+        @include arsh--opacity(0);
+        @include arsh--transform(translate($arrows-down--size/-6, $arrows-down--size*4/6) rotate(-45deg));
+    }
+}
+
+#app {
+    input:not([type="checkbox"]):not([type="radio"]), select {
+		padding: 0 15px;
+    	height: 40px;
+	}
+
+    .btn {
+        @include arsh--border-radius(0);
+    }
+
+    .btn-7-2 {
+        border: 1px solid map-get($site-colors, 7);
+        background-color: transparent;
+        color: map-get($site-colors, 7);
+
+        &:hover {
+            background-color: map-get($site-colors, 7);
+            color: map-get($site-colors, 2);
+        }
+    }
+
+    .btn-7-4 {
+        border: 1px solid map-get($site-colors, 7);
+        background-color: transparent;
+        color: map-get($site-colors, 7);
+
+        &:hover {
+            background-color: map-get($site-colors, 7);
+            color: map-get($site-colors, 4);
+        }
+    }
+
+    .btn-4-7 {
+        border: 1px solid map-get($site-colors, 4);
+        background-color: transparent;
+        color: map-get($site-colors, 4);
+
+        &:hover {
+            background-color: map-get($site-colors, 4);
+            color: map-get($site-colors, 7);
+        }
+    }
+
+    form {
+        .text-message-pink {
+            color: #fac;
+        }
+        .text-message-green {
+            color: #9adeaa;
+        }
+    }
+}

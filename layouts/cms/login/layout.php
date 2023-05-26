@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="<?= Arshavinel\ElleTherapy\Language\LangCMS::get() ?>">
 <head>
-    <title><?= Arsh\Core\Meta::get('title') ?></title>
+    <title><?= Arshwell\Monolith\Meta::get('title') ?></title>
     <?php
-    if (Arsh\Core\Meta::exists('description')) { ?>
-        <meta name="description" itemprop="description" content="<?= Arsh\Core\Meta::get('description') ?>">
+    if (Arshwell\Monolith\Meta::exists('description')) { ?>
+        <meta name="description" itemprop="description" content="<?= Arshwell\Monolith\Meta::get('description') ?>">
     <?php } ?>
 
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -12,11 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow" />
 
+    <!-- Google Identity Auth -->
+    <script src="https://accounts.google.com/gsi/client"></script>
+
     [@css@]
 
     [@js-header@]
 
-    <link href="<?= $cms_config['content']['favicon'] ?>" rel="shortcut icon" type="image/png" />
+    <link href="<?= $_CMS_CONFIG['content']['favicon'] ?>" rel="shortcut icon" type="image/png" />
 </head>
 <body>
     [@frontend@]

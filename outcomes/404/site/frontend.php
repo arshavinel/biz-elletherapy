@@ -1,5 +1,5 @@
-<?= Arsh\Core\Piece::html('site/banner', array(
-    'background'    => Brain\View\Site::image('banner.background', 1400, 450),
-    'sentence'      => Brain\View\Site::sentence('banner.text'),
-    'tag'           => Brain\View\Site::sentence('banner.pagina')
+<?= Arshwell\Monolith\Piece::html('site/banner', array(
+    'background'    => Arshavinel\ElleTherapy\View\Site::image('banner.background', 1400, 450),
+    'sentence'      => Arshavinel\ElleTherapy\View\Site::sentence('banner.text'),
+    'tag'           => Arshavinel\ElleTherapy\View\Site::sentence('banner.pagina')
 )) ?>

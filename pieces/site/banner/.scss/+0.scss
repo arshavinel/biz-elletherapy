@@ -55,7 +55,6 @@ $arrows-down--speed: 3s;
                 }
                 p.tag {
                     margin: 0;
-                    font-size: 16px;
                     color: map-get($site-colors, 3);
                     text-shadow: 0px 2px 7px #{map-get($site-colors, 7)}50;
                 }

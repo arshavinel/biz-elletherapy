@@ -1,20 +1,21 @@
 <?php
 
-use Arsh\Core\Meta;
-use Arsh\Core\Table\TableValidationResponse;
-use Brain\Table\Event\Promo\Discount;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Table\TableValidationResponse;
+
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount;
 
 Meta::set('title', "Reduceri");
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
+        'conn'  => 'elletherapy',
         'table' => Discount::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => Arshavinel\ElleTherapy\Validation\CMSValidation::class
         )
     ),
 
@@ -36,7 +37,7 @@ return array(
                                     'set'   => "slug:lg = ?",
                                     'where' => "id_discount = ?"
                                 ),
-                                array(':lg' => $lg, Arsh\Core\Text::slug($form->value("data.title.$lg")), $form->value('id'))
+                                array(':lg' => $lg, Arshwell\Monolith\Text::slug($form->value("data.title.$lg")), $form->value('id'))
                             );
                         }
                     }
@@ -57,10 +58,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Event\Promo\Discount,bg_image"
+                        "required|image:Arshavinel\ElleTherapy\Table\Event\Promo\Discount,bg_image"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Event\Promo\Discount,bg_image"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Event\Promo\Discount,bg_image"
                     )
                 )
             )
@@ -71,15 +72,16 @@ return array(
                 'column'    => 'id_meeting',
                 'type'      => 'int',
                 'null'      => true,
-                'from'      => array(
-                    'table'     => Brain\Table\Event\Meeting::class,
+
+                'join'      => array(
+                    'table'     => Arshavinel\ElleTherapy\Table\Event\Meeting::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
                     "required|int",
-                    "inDB:".Brain\Table\Event\Meeting::class.','.Brain\Table\Event\Meeting::PRIMARY_KEY
+                    "inDB:".Arshavinel\ElleTherapy\Table\Event\Meeting::class.','.Arshavinel\ElleTherapy\Table\Event\Meeting::PRIMARY_KEY
                 )
             )
         ),
@@ -159,10 +161,10 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     'insert' => array(
-                        "required|image:Brain\Table\Event\Promo\Discount,seo_image"
+                        "required|image:Arshavinel\ElleTherapy\Table\Event\Promo\Discount,seo_image"
                     ),
                     'update' => array(
-                        "optional|image:Brain\Table\Event\Promo\Discount,seo_image"
+                        "optional|image:Arshavinel\ElleTherapy\Table\Event\Promo\Discount,seo_image"
                     )
                 )
             )

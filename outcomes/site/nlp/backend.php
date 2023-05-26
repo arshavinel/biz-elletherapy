@@ -1,8 +1,9 @@
 <?php
 
-use Arsh\Core\Meta;
-use Brain\View\Site;
-use Brain\Table\NLP\FAQ;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\View\Site;
+use Arshavinel\ElleTherapy\Table\NLP\FAQ;
 
 Meta::set('title',			Site::sentenceSEO('title'));
 Meta::set('description',	Site::textSEO('description'));

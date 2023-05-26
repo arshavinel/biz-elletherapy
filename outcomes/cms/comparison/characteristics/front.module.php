@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Web;
-use Brain\Table\Industry\Characteristic;
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\Industry\Characteristic;
 
 return array(
     'breadcrumbs' => array(

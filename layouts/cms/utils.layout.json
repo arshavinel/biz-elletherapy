@@ -1,18 +1,22 @@
 {
     "scss": {
         "vars": {},
-        "ArshWell": [
-            "defaults",
-            "module/*",
-            "select2",
-            "multiselect",
-            "bootstrap-tagsinput",
-            "fancybox"
-        ],
-        "project": [
-            "cms/colors"
-        ]
+        "files": {
+            "vendor/arshwell/monolith/resources": [
+                "Arshwell/module/*",
+                "select2/v4",
+                "multiselect",
+                "bootstrap-tagsinput"
+            ],
+            "resources": [
+                "libraries/fancybox/v3",
+                "custom/cms/colors",
+                "custom/cms/fonts",
+                "custom/global"
+            ]
+        }
     },
+
     "js": {
         "routes": {
             "groups": [
@@ -20,23 +24,28 @@
             ],
             "exceptions": []
         },
-        "header": {
-            "ArshWell": [
-                "tinymce-v5",
-                "module/*"
-            ]
-        },
-        "footer": {
-            "ArshWell": [
-                "select2",
-                "bootstrap-v4/tooltip",
-                "bootstrap-v4/popover",
-                "bootstrap-v4/modal",
-                "bootstrap-confirmation",
-                "multiselect",
-                "bootstrap-tagsinput",
-                "fancybox"
-            ]
+        "files": {
+            "header": {
+                "vendor/arshwell/monolith/resources": [
+                    "Arshwell/module/*",
+                    "tinymce-v5",
+                    "tinycolor"
+                ]
+            },
+            "footer": {
+                "vendor/arshwell/monolith/resources": [
+                    "select2/v4",
+                    "bootstrap/v4/tooltip",
+                    "bootstrap/v4/popover",
+                    "bootstrap/v4/modal",
+                    "bootstrap-confirmation",
+                    "multiselect",
+                    "bootstrap-tagsinput"
+                ],
+                "resources": [
+                    "libraries/fancybox/v3"
+                ]
+            }
         }
     }
 }

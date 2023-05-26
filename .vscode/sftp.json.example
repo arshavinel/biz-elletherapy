@@ -1,0 +1,15 @@
+{
+    "name":         "{{user.dev.name}}/elletherapy",
+    "host":         "work.arshguide.ro",
+    "protocol":     "ftp",
+    "port":         21,
+    "username":     "{{user.dev.name}}@work.arshguide.ro",
+    "password":     "{{user.dev.pass}}",
+    "remotePath":   "/elletherapy/",
+    "ignore":       [
+        ".vscode/*", ".git/*", ".well-known/*", "cgi-bin/*", "vendor/**/.git/*",
+        "caches/*", "uploads/*", "!uploads/files/.htaccess", "!uploads/design/.htaccess",
+        ".ftpquota", ".gitignore", ".gitmodules"
+    ],
+    "uploadOnSave": true
+}

@@ -1,19 +1,21 @@
 <?php
 
-use Arsh\Core\Meta;
-use Brain\Table\Form\Appointment;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Validation\CMSValidation;
+use Arshavinel\ElleTherapy\Table\Form\Appointment;
 
 Meta::set('title', 'Formulare programări');
 
 return array(
     'DB' => array(
-        'conn'  => 'default',
+        'conn'  => 'elletherapy',
         'table' => Appointment::class
     ),
 
     'PHP' => array(
         'validation' => array(
-            'class' => Brain\Validation\CMSValidation::class
+            'class' => CMSValidation::class
         )
     ),
 
@@ -86,14 +88,15 @@ return array(
             'DB' => array(
                 'column'    => 'id_service',
                 'type'      => 'int',
-                'from'      => array(
-                    'table'     => Brain\Table\Service::class,
+
+                'join'      => array(
+                    'table'     => Arshavinel\ElleTherapy\Table\Service::class,
                     'column'    => 'title'
                 )
             ),
             'PHP' => array(
                 'rules' => array(
-                    "required|inDB:Brain\Table\Service,id_service"
+                    "required|inDB:Arshavinel\ElleTherapy\Table\Service,id_service"
                 )
             )
         ),

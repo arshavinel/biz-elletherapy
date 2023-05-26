@@ -1,7 +1,7 @@
-<?= Arsh\Core\Piece::html('site/banner', array(
+<?= Arshwell\Monolith\Piece::html('site/banner', array(
     'background'    => $service->file('preview')->url('big'),
     'sentence'      => $service->translation('title'),
-    'tag'           => Brain\View\Site::sentence('banner.subtitlu')
+    'tag'           => Arshavinel\ElleTherapy\View\Site::sentence('banner.subtitlu')
 )) ?>
 
 <div class="container padding-3rd-3rd">

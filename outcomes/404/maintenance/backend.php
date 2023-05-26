@@ -1,14 +1,16 @@
 <?php
 
-use Arsh\Core\Table\Files\Image;
-use Arsh\Core\Meta;
-use Arsh\Core\ENV;
-use Arsh\Core\Web;
-use Arsh\Core\URL;
-use Brain\Table\Logo;
-use Brain\View\Site;
+use Arshwell\Monolith\Table\Files\Image;
+use Arshwell\Monolith\StaticHandler;
+use Arshwell\Monolith\Meta;
+use Arshwell\Monolith\Web;
+use Arshwell\Monolith\URL;
 
-if (ENV::maintenance('active') == false) {
+use Arshavinel\ElleTherapy\Table\Identity\Logo;
+use Arshavinel\ElleTherapy\Table\Maintenance;
+use Arshavinel\ElleTherapy\View\Site;
+
+if (Maintenance::isActive() == false) {
     Web::go('site.home');
     exit;
 }
@@ -16,7 +18,7 @@ if (ENV::maintenance('active') == false) {
 $logo = (new Image(Logo::class, Logo::field('id_logo', "visible = 1"), 'useful'))->url('medium');
 
 $web = Web::prepare(
-    preg_replace('~^'. ENV::root() .'~', '', urldecode(URL::path())),
+    preg_replace('~^'. StaticHandler::getEnvConfig()->getSiteRoot() .'~', '', urldecode(URL::path())),
     $_SERVER['REQUEST_METHOD']
 );
 

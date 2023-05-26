@@ -4,7 +4,7 @@
         <h5><?= $service->translation('title') ?></h5>
         <small><b class="my-2 d-block"><?= $service->translation('price') ?></b></small>
         <p class="mb-1">
-            <?= Arsh\Core\Text::removeAllTags($service->translation('description')) ?>
+            <?= Arshwell\Monolith\Text::removeAllTags($service->translation('description')) ?>
         </p>
     </div>
 </div>

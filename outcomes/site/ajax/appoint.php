@@ -1,9 +1,10 @@
 <?php
 
-use Arsh\Core\Mail;
-use Brain\Validation\SiteValidation;
-use Brain\Table\Form\Appointment;
-use Brain\Table\Service;
+use Arshwell\Monolith\Mail;
+
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\Table\Form\Appointment;
+use Arshavinel\ElleTherapy\Table\Service;
 
 $form = SiteValidation::run($_POST,
     array(
@@ -81,7 +82,7 @@ if ($form->valid()) {
         Mail::send(
             'appointments/confirmation',
             $form->value('email'),
-            Brain\View\Site::sentence('email.programare.subiect', NULL, true),
+            Arshavinel\ElleTherapy\View\Site::sentence('email.programare.subiect', NULL, true),
             array(
                 'fields'    => array(
                     'lastname'  => $form->value('lastname'),

@@ -1,9 +1,8 @@
 <?php
 
-use Arsh\Core\Mail;
-use Brain\Validation\SiteValidation;
-use Brain\Table\Event\Promo\Discount\Join;
-use Brain\Table\Event\Promo\Discount;
+use Arshavinel\ElleTherapy\Validation\SiteValidation;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount\Join;
+use Arshavinel\ElleTherapy\Table\Event\Promo\Discount;
 
 $form = SiteValidation::run($_POST,
     array(

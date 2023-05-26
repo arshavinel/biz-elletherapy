@@ -1,7 +1,8 @@
 <?php
 
-use Arsh\Core\Meta;
-use Brain\Table\Config;
+use Arshwell\Monolith\Meta;
+
+use Arshavinel\ElleTherapy\Table\Config;
 
 Meta::set('title', 'Elemente site');
 
