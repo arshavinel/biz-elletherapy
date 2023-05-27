@@ -107,6 +107,11 @@
 			"characteristics": {
 				"hidden":	["AJAX",	"cms/ajax/comparare/caracteristici/ascunsa"]
 			}
+		},
+        "content": {
+			"social-media": {
+				"visible":	["AJAX",	"cms/ajax/content/social-media/visible"]
+			}
 		}
 	}
 }

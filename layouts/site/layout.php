@@ -92,13 +92,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= Arshwell\Monolith\Web::inGroup('site.coaching') ? 'active' : '' ?>" href="<?= Arshwell\Monolith\Web::url('site.coaching.info') ?>">
-                        COACHING
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= Arshwell\Monolith\Web::is('site.nlp') ? 'active' : '' ?>" href="<?= Arshwell\Monolith\Web::url('site.nlp') ?>">
-                        NLP
+                    <a class="nav-link <?= Arshwell\Monolith\Web::inGroup('site.services') ? 'active' : '' ?>" href="<?= Arshwell\Monolith\Web::url('site.services.all') ?>">
+                        SERVICII
                     </a>
                 </li>
                 <li class="nav-item">

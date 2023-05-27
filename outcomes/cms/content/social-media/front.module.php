@@ -1,5 +1,9 @@
 <?php
 
+use Arshwell\Monolith\Web;
+
+use Arshavinel\ElleTherapy\Table\SocialMedia;
+
 return array(
     'breadcrumbs' => array(
         'Conținut',
@@ -22,6 +26,36 @@ return array(
     ),
 
     'features' => array(
+        function (string $key, int $id) {
+            $array = array(
+                'HTML' => array(
+                    'icon'  => 'lock',
+                    'class' => "btn badge btn-outline-secondary p-2",
+                    'type'  => 'submit'
+                ),
+                'JS' => array(
+                    'tooltip' => array(
+                        'title'     => 'Fă-le vizibile',
+                        'placement' => 'top',
+                        'trigger'   => 'hover'
+                    ),
+                    'ajax' => array(
+                        'url'   => Web::url('cms.ajax.content.social-media.visible'),
+                        'type'  => 'POST'
+                    )
+                )
+            );
+
+            if (SocialMedia::field('visible', "id_media = ?", array($id))) {
+                $array['HTML']['icon']  = 'eye';
+                $array['HTML']['class'] = "btn badge btn-outline-success p-2";
+
+                $array['JS']['tooltip']['title'] = 'Ascunde';
+            }
+
+            return $array;
+        },
+
         'update' => array(
             'HTML' => array(
                 'icon'      => 'edit',
@@ -85,6 +119,16 @@ return array(
                 'label'         => "Text",
                 'icon'          => 'file-alt',
                 'type'          => 'text'
+            )
+        ),
+
+        'visible' => array(
+            'HTML' => array(
+                'label'     => "Activă",
+                'icon'      => 'eye',
+                'type'      => 'checkbox',
+                'notes'     => array("Vizibilă pe site"),
+                'value'     => 1
             )
         ),
 

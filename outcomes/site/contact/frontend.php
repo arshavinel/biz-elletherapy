@@ -44,34 +44,16 @@
             <div class="border border-color-2 text-color-2 p-3 pb-2 h-100">
                 <h1><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.titlu') ?></h1>
 
-                <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.email') ?></b>
-                <?= Arshavinel\ElleTherapy\Table\Config::title('email') ?>
-
                 <div class="padding-1st-1st">
-                    <h5>România</h5>
                     <div>
-                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.telefon') ?></b>
-                        <a href="tel:<?= str_replace(' ', '', Arshavinel\ElleTherapy\Table\Config::title('phone_romania')) ?>">
-                            <?= Arshavinel\ElleTherapy\Table\Config::title('phone_romania') ?>
-                        </a> (WhatsApp și Viber)
-                    </div>
-                    <div>
-                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.adresa') ?></b>
-                        <?= Arshavinel\ElleTherapy\View\Site::content('adresă.romania', NULL, true) ?>
-                    </div>
-                </div>
-
-                <div class="padding-1st-1st">
-                    <h5>Republica Moldova</h5>
-                    <div>
-                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.telefon') ?></b>
-                        <a href="tel:<?= str_replace(' ', '', Arshavinel\ElleTherapy\Table\Config::title('phone_moldova')) ?>">
-                            <?= Arshavinel\ElleTherapy\Table\Config::title('phone_moldova') ?>
+                        <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.email') ?></b>
+                        <a href="mailto: <?= str_replace(' ', '', Arshavinel\ElleTherapy\Table\Config::title('email')) ?>">
+                            <?= Arshavinel\ElleTherapy\Table\Config::title('email') ?>
                         </a>
                     </div>
                     <div>
                         <b><?= Arshavinel\ElleTherapy\View\Site::sentence('contact.adresa') ?></b>
-                        <?= Arshavinel\ElleTherapy\View\Site::content('adresă.moldova', NULL, true) ?>
+                        <?= Arshavinel\ElleTherapy\View\Site::content('adresă.romania', NULL, true) ?>
                     </div>
                 </div>
             </div>

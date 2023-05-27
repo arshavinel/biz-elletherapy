@@ -19,7 +19,8 @@ return array(
     'actions' => array(
         'select' => array(
             'columns' => array(
-                'public' => array('icon', 'text')
+                'public'    => array('icon', 'text'),
+                'private'   => array('visible'),
             ),
             'limit' => 10
         ),
@@ -71,6 +72,25 @@ return array(
             'PHP' => array(
                 'rules' => array(
                     "required|minLength:10"
+                )
+            )
+        ),
+
+        'visible' => array(
+            'DB' => array(
+                'column'    => 'visible',
+                'type'      => 'tinyint',
+                'default'   => 0
+            ),
+            'PHP' => array(
+                'rules' => array(
+                    function ($value) {
+                        if ($value == NULL) {
+                            $value = 0;
+                        }
+                        return $value;
+                    },
+                    "inArray:0,1"
                 )
             )
         ),

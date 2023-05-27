@@ -6,7 +6,12 @@
 		"show":	["GET",	"blog/articol/[id:i]/[slug:*]"]
 	},
 
-	"coaching": {
+	"services": {
+		"all":  ["GET",	"servicii/"],
+		"one":  ["GET",	"servicii/[id:i]/[slug:*]"]
+	},
+
+    "coaching": {
 		"info":		["GET",	"coaching/"],
 		"service":	["GET",	"coaching/serviciu/[id:i]/[slug:*]"]
 	},

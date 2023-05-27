@@ -1,9 +1,9 @@
 <div <?= ($piece['homepage'] ? 'class="background-piece" style="background-image: url('. Arshavinel\ElleTherapy\View\Site::image('servicii.background', 1400, 1000) .');"' : '') ?>>
     <div class="container text-center padding-3rd-6th">
-        <div class="row">
+        <div class="row justify-content-center">
             <?php
             foreach ($services as $service) { ?>
-                <div class="col-sm-4 padding-4th-4th">
+                <div class="col-sm-4 col-xl-3 padding-4th-4th">
                     <div class="background-image" style="background-image: url(<?= $service->file('preview')->url('medium') ?>);">
                         <h5><?= $service->translation('title') ?></h5>
                     </div>
@@ -16,7 +16,7 @@
                     <?php
                     if ($service->has_page) { ?>
                         <a class="btn btn-sm <?= ($piece['homepage'] ? 'btn-7-4' : 'btn-4-7') ?>"
-                        href="<?= Arshwell\Monolith\Web::url('site.coaching.service', ['id'=>$service->id(),'slug'=>$service->translation('title')]) ?>">
+                        href="<?= Arshwell\Monolith\Web::url('site.services.one', ['id'=>$service->id(),'slug'=>$service->translation('title')]) ?>">
                             <?= Arshavinel\ElleTherapy\View\Site::sentence('serviciu.link.text', NULL, true) ?>
                         </a>
                     <?php }

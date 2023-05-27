@@ -1,10 +1,17 @@
 <div class="box">
-    <div class="background-image" style="background-image: url(<?= $service->file('preview')->url('medium') ?>);"></div>
-    <div class="text">
-        <h5><?= $service->translation('title') ?></h5>
-        <small><b class="my-2 d-block"><?= $service->translation('price') ?></b></small>
-        <p class="mb-1">
-            <?= Arshwell\Monolith\Text::removeAllTags($service->translation('description')) ?>
-        </p>
+    <?php
+    if ($service->file('preview')) { ?>
+        <div class="service--bg-image" style="background-image: url(<?= $service->file('preview')->url('medium') ?>);"></div>
+    <?php } ?>
+    <div class="service--text">
+        <h6 style="font-size: smaller;">
+            <?= $service->translation('title') ?>
+        </h6>
+        <small class="service--description mt-1">
+            <?= Arshwell\Monolith\Text::chars(
+                Arshwell\Monolith\Text::removeAllTags($service->translation('description')),
+                300
+            ) ?>
+        </small>
     </div>
 </div>

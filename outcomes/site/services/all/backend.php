@@ -2,7 +2,7 @@
 
 use Arshwell\Monolith\Meta;
 
-use Arshavinel\ElleTherapy\Table\SocialMedia;
+use Arshavinel\ElleTherapy\Table\NLP\FAQ;
 use Arshavinel\ElleTherapy\View\Site;
 
 Meta::set('title',			Site::sentenceSEO('title'));
@@ -16,9 +16,8 @@ Meta::set('twitter:title',          Site::sentenceSEO('SM:title'));
 Meta::set('twitter:description',    Site::textSEO('SM:description'));
 Meta::set('twitter:image',          Site::imageSEO('SM:image', 1200, 627));
 
-$social_media = SocialMedia::select(array(
-    'columns'   => "link, text:lg",
-    'order'     => "`order` ASC, id_media DESC",
+$nlpFaqs = FAQ::select(array(
+    'columns'   => "question:lg, answer:lg",
     'where'     => "visible = 1",
-    'files'     => true
+    'order'     => "`order` ASC, id_faq DESC"
 ));
