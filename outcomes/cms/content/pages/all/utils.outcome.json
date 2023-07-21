@@ -1,0 +1,12 @@
+{
+    "layout": "cms",
+    "js": {
+        "files": {
+            "footer": {
+                "vendor/arshwell/monolith/resources": [
+                    "clipboard/v2"
+                ]
+            }
+        }
+    }
+}

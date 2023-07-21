@@ -3,11 +3,11 @@
         "vars": {},
         "files": {
             "vendor/arshwell/monolith/resources": [
-                "bootstrap/v4",
-                "Arshwell/mixins/v1",
-                "Arshwell/spacings/v1"
+                "mixins/v1",
+                "spacings/v1"
             ],
             "resources": [
+                "plugins/bootstrap/v4",
                 "custom/site/colors",
                 "custom/global"
             ]

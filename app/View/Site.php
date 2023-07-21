@@ -8,7 +8,7 @@ use Arshavinel\ElleTherapy\Language\LangSite;
 
 class Site extends TableView {
     const TABLE         = 'views_site';
-    const PRIMARY_KEY   = 'id_view_site';
+    const PRIMARY_KEY   = 'id_view';
 
     const TRANSLATOR    = LangSite::class;
 }

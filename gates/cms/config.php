@@ -30,93 +30,175 @@ $_CMS_CONFIG = array(
     		'route' => 'cms.home'
     	),
 
+        // Identity
         array(
-            'icon'  => 'calendar-alt',
-            'text'  => 'Evenimente',
+            'icon'  => 'star',
+            'text'  => 'Identitate',
 
     		'links' => array(
-    			array(
-                    'icon'  => 'boxes',
-                    'text'  => 'Serii',
-                    'route' => 'cms.events.groups'
+                array(
+                    'icon'  => 'tint',
+                    'text'  => 'Logo-uri Elle',
+                    'route' => 'cms.identity.logos'
     			),
                 array(
-                    'icon'  => 'coffee',
-                    'text'  => 'Întâlniri',
-                    'route' => 'cms.events.meetings'
+                    'icon'  => 'comment',
+                    'text'  => 'Social media',
+                    'route' => 'cms.identity.social-media'
     			),
-                array(
-                    'icon'  => 'grin-stars',
-                    'text'  => 'Promo',
-
-            		'links' => array(
-            			array(
-                            'icon'  => 'random',
-                            'text'  => 'Tombole',
-                            'route' => 'cms.events.promo.raffles'
-            			),
-                        array(
-                            'icon'  => 'envelope',
-                            'text'  => 'Tombole aplicări',
-                            'route' => 'cms.events.promo.joins.raffles'
-            			),
-                        array(
-                            'icon'  => 'percent',
-                            'text'  => 'Reduceri',
-                            'route' => 'cms.events.promo.discounts'
-            			),
-                        array(
-                            'icon'  => 'envelope',
-                            'text'  => 'Reduceri aplicări',
-                            'route' => 'cms.events.promo.joins.discounts'
-            			),
-            		)
-            	)
     		)
     	),
 
+        // Pages
         array(
-            'icon'  => 'clipboard-list',
-            'text'  => 'Servicii',
-            'route' => 'cms.services'
-    	),
-
-        array(
-            'icon'  => 'question-circle',
-            'text'  => 'FAQ',
+            'icon'  => 'window-restore',
+            'text'  => 'Pagini',
 
     		'links' => array(
-    			array(
-                    'icon'  => 'grin-stars',
-                    'text'  => 'Lucruri interesante',
-                    'route' => 'cms.faq.interesting'
-    			),
+
+                // Events
                 array(
-                    'icon'  => 'spa',
-                    'text'  => 'NLP',
-                    'route' => 'cms.faq.nlp'
-    			)
-    		)
-    	),
+                    'icon'  => 'calendar-alt',
+                    'text'  => 'Evenimente',
+                    'color' => 'secondary',
 
-        array(
-            'icon'  => 'compress',
-            'text'  => 'Comparare industrii',
+                    'links' => array(
+                        array(
+                            'icon'  => 'boxes',
+                            'text'  => 'Serii',
+                            'route' => 'cms.events.groups',
+                        ),
+                        array(
+                            'icon'  => 'coffee',
+                            'text'  => 'Întâlniri',
+                            'route' => 'cms.events.meetings'
+                        ),
+                        array(
+                            'icon'  => 'grin-stars',
+                            'text'  => 'Promo',
 
-    		'links' => array(
-    			array(
-                    'icon'  => 'building',
-                    'text'  => 'Industrii',
-                    'route' => 'cms.comparison.industries'
-    			),
+                            'links' => array(
+                                array(
+                                    'icon'  => 'random',
+                                    'text'  => 'Tombole',
+                                    'route' => 'cms.events.promo.raffles'
+                                ),
+                                array(
+                                    'icon'  => 'envelope',
+                                    'text'  => 'Tombole aplicări',
+                                    'route' => 'cms.events.promo.joins.raffles'
+                                ),
+                                array(
+                                    'icon'  => 'percent',
+                                    'text'  => 'Reduceri',
+                                    'route' => 'cms.events.promo.discounts'
+                                ),
+                                array(
+                                    'icon'  => 'envelope',
+                                    'text'  => 'Reduceri aplicări',
+                                    'route' => 'cms.events.promo.joins.discounts'
+                                ),
+                            )
+                        )
+                    )
+                ),
+
+                // My Story
+                array(
+                    'icon'  => 'window-restore',
+                    'text'  => 'Povestea mea',
+
+                    'links' => array(
+                        array(
+                            'icon'  => 'grin-stars',
+                            'text'  => 'Lucruri interesante',
+                            'route' => 'cms.faq.interesting',
+                            'color' => 'secondary',
+                        ),
+                    )
+                ),
+
+                // Services
                 array(
                     'icon'  => 'list',
-                    'text'  => 'Caracteristici',
-                    'route' => 'cms.comparison.characteristics'
-    			)
+                    'text'  => 'Servicii',
+
+                    'links' => array(
+                        array(
+                            'icon'  => 'clipboard-list',
+                            'text'  => 'Servicii',
+                            'route' => 'cms.services'
+                        ),
+                        array(
+                            'icon'  => 'compress',
+                            'text'  => 'Comparare industrii',
+
+                            'links' => array(
+                                array(
+                                    'icon'  => 'building',
+                                    'text'  => 'Industrii',
+                                    'route' => 'cms.comparison.industries'
+                                ),
+                                array(
+                                    'icon'  => 'list',
+                                    'text'  => 'Caracteristici',
+                                    'route' => 'cms.comparison.characteristics'
+                                )
+                            )
+                        ),
+                        array(
+                            'icon'  => 'spa',
+                            'text'  => 'NLP',
+                            'route' => 'cms.faq.nlp'
+                        ),
+                    )
+                ),
+
+                // Blog
+                array(
+                    'icon'  => 'newspaper',
+                    'text'  => 'Blog',
+
+                    'links' => array(
+                        array(
+                            'icon'  => 'window-maximize',
+                            'text'  => 'Categorii',
+                            'route' => 'cms.blog.categories'
+                        ),
+                        array(
+                            'icon'  => 'copy',
+                            'text'  => 'Articole',
+                            'route' => 'cms.blog.articles'
+                        )
+                    )
+                ),
+            )
+        ),
+
+        // Content
+        array(
+            'icon'  => 'folder',
+            'text'  => 'Conținut',
+
+    		'links' => array(
+
+    			array(
+                    'icon'  => 'copy',
+                    'text'  => 'Conținut pagini',
+                    'group' => 'cms.content.pages',
+                    'route' => 'cms.content.pages.all'
+    			),
+
+                array(
+                    'icon'  => 'file-alt',
+                    'text'  => 'Conținut general',
+                    'group' => 'cms.content.general',
+                    'route' => 'cms.content.general.all'
+    			),
     		)
     	),
 
+        // Forms
         array(
             'icon'  => 'address-card',
             'text'  => 'Formulare',
@@ -136,9 +218,11 @@ $_CMS_CONFIG = array(
                     'text'  => 'Programări',
                     'route' => 'cms.forms.appointment',
 
-                    // TODO: remove them at next update
-                    'color'     => time() < strtotime('2021-07-31') ? 'success' : false,
-                    'tooltip'   => time() < strtotime('2021-07-31') ? 'Nou' : false,
+                    // TODO: remove them after 2021-07-31
+                    'badge' => [
+                        'class' => 'success',
+                        'text' => time() < strtotime('2021-07-31') ? 'Nou' : false,
+                    ],
 
                     'badge' => array(
                         'class' => "info",
@@ -162,54 +246,7 @@ $_CMS_CONFIG = array(
     		)
     	),
 
-        array(
-            'icon'  => 'newspaper',
-            'text'  => 'Blog',
-
-    		'links' => array(
-    			array(
-                    'icon'  => 'window-maximize',
-                    'text'  => 'Categorii',
-                    'route' => 'cms.blog.categories'
-    			),
-                array(
-                    'icon'  => 'copy',
-                    'text'  => 'Articole',
-                    'route' => 'cms.blog.articles'
-    			)
-    		)
-    	),
-
-        array(
-            'icon'  => 'window-restore',
-            'text'  => 'Conținut',
-
-    		'links' => array(
-                array(
-                    'icon'  => 'tint',
-                    'text'  => 'Logo-uri',
-                    'route' => 'cms.content.logos'
-    			),
-                array(
-                    'icon'  => 'copy',
-                    'text'  => 'Pagini',
-                    'group' => 'cms.content.views.pages',
-                    'route' => 'cms.content.views.pages.all'
-    			),
-                array(
-                    'icon'  => 'copy',
-                    'text'  => 'Conținut general',
-                    'group' => 'cms.content.views.general',
-                    'route' => 'cms.content.views.general.all'
-    			),
-                array(
-                    'icon'  => 'comment',
-                    'text'  => 'Social media',
-                    'route' => 'cms.content.social-media'
-    			)
-    		)
-    	),
-
+        // Settings
         array(
             'icon'  => 'cogs',
             'text'  => 'Setări',
@@ -227,5 +264,46 @@ $_CMS_CONFIG = array(
     			)
     		)
     	),
+
+        // CMS
+        array(
+            'icon'      => 'tools',
+            'text'      => 'CMS',
+            'visible'   => (\Arshavinel\ElleTherapy\Table\Account\Admin\Profile::auth('id_role') == 1),
+
+            // TODO: remove them after 2023-10-22
+            'badge' => [
+                'class' => 'success',
+                'text' => time() < strtotime('2023-10-22') ? 'Nou' : false,
+            ],
+
+            'links' => array(
+
+    			// CMS Content
+                array(
+                    'icon' => 'folder-minus',
+                    'text' => 'Conținut',
+
+                    'links' => array(
+
+                        array(
+                            'icon'  => 'copy',
+                            'text'  => 'Conținut pagini',
+                            'group' => 'cms.cms.content.pages',
+                            'route' => 'cms.cms.content.pages.all'
+                        ),
+
+                        array(
+                            'icon'  => 'file-alt',
+                            'text'  => 'Conținut general',
+                            'group' => 'cms.cms.content.general',
+                            'route' => 'cms.cms.content.general.all'
+                        ),
+
+                    )
+                ),
+
+    		)
+        ),
     )
 );

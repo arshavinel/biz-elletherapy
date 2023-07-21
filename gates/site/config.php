@@ -4,7 +4,8 @@ use Arshwell\Monolith\Meta;
 
 Meta::set('robots', 'index, follow');
 
-/*******************************************************************************
-Session:
-    (int) 'appointments' -> increments on valid appointment forms
-*******************************************************************************/
+/**
+ * @var $_SESSION {
+ *      @param int $appointments (increments for every valid appointment form submited)
+ * }
+ */

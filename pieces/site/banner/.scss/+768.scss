@@ -1,8 +1,8 @@
 .section-banner {
     min-height: 250px;
-    height: 250px; // as backup if 'vh' doesn't work
-    height: 100vh;
-    max-height: 1000px;
+    height: -webkit-fill-available; // fallback if 'vh' doesn't work
+    height: 100vh; // fallback for browsers that do not support var(--vh, 1vh)
+    height: calc(var(--vh, 1vh) * 100); // --vh property set in javascript
 
     &.section-banner--with-text {
         > .overlay {
@@ -16,9 +16,9 @@
 
     &.section-banner--half {
         min-height: 125px;
-        height: 125px; // as backup if 'vh' doesn't work
-        height: 50vh;
-        max-height: 500px;
+        height: 125px; // fallback if 'vh' doesn't work
+        height: 50vh; // fallback for browsers that do not support var(--vh, 1vh)
+        height: calc(var(--vh, 1vh) * 50); // --vh property set in javascript
 
         &.section-banner--with-text {
             > .overlay {

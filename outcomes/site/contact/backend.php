@@ -19,5 +19,6 @@ Meta::set('twitter:image',          Site::imageSEO('SM:image', 1200, 627));
 $social_media = SocialMedia::select(array(
     'columns'   => "link, text:lg",
     'order'     => "`order` ASC, id_media DESC",
+    'where'     => "visible = 1",
     'files'     => true
 ));

@@ -1,9 +1,8 @@
 .box {
     color: map-get($site-colors, 5);
-    @include arsh--box-shadow(1px 1px 10px #000000);
     overflow: hidden;
 
-    .background-image {
+    .service--bg-image {
         background-position: center;
         background-repeat: no-repeat;
         @include arsh--background-size(cover);
@@ -11,16 +10,16 @@
         height: 100px;
         color: map-get($site-colors, 7);
     }
-    .text {
+    .service--text {
         padding: 10px;
 
-        p {
+        .service--description {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
             overflow: hidden;
-            line-clamp: 3;
-            -webkit-line-clamp: 3;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
         }
     }
 }
