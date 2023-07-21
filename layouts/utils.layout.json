@@ -3,13 +3,13 @@
         "vars": {},
         "files": {
             "vendor/arshwell/monolith/resources": [
-                "bootstrap/v4",
-                "font-awesome/v5",
-                "Arshwell/mixins/v1",
-                "Arshwell/spacings/v1",
-                "Arshwell/defaults"
+                "mixins/v1",
+                "spacings/v1",
+                "defaults"
             ],
             "resources": [
+                "plugins/bootstrap/v4",
+                "plugins/font-awesome/v5",
                 "custom/global"
             ]
         }
@@ -24,22 +24,23 @@
         },
         "files": {
             "header": {
-                "vendor/arshwell/monolith/resources": [
-                    "jquery/v3",
-                    "jquery-ui/v1",
-                    "floating-ui/v1",
-                    "bootstrap/v4/index",
-                    "bootstrap/v4/util",
-                    "bootstrap/v4/dropdown",
-                    "bootstrap/v4/collapse",
-                    "multiselect",
-                    "URI"
-                ],
+                "resources": [
+                    "plugins/jquery/v3",
+                    "plugins/jquery-ui/v1",
+                    "plugins/floating-ui/v1",
+                    "plugins/bootstrap/v4/index",
+                    "plugins/bootstrap/v4/util",
+                    "plugins/bootstrap/v4/dropdown",
+                    "plugins/bootstrap/v4/collapse",
+                    "plugins/multiselect",
+                    "plugins/URI"
+                ]
+            },
+            "footer": {
                 "resources": [
                     "custom/global"
                 ]
-            },
-            "footer": {}
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
     "license": "proprietary",
 
     "require": {
-        "arshwell/monolith": "0.3.*",
+        "arshwell/monolith": "0.4.*",
         "google/apiclient": "^2.12",
         "league/color-extractor": "^0.4.0"
     },

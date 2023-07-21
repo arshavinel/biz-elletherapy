@@ -2,8 +2,8 @@
     "js": {
         "files": {
             "header": {
-                "vendor/arshwell/monolith/resources": [
-                    "bootstrap/v4/tab"
+                "resources": [
+                    "plugins/bootstrap/v4/tab"
                 ]
             }
         }

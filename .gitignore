@@ -1,20 +1,23 @@
-.vscode/*
-!.vscode/sftp.json.example
+#################################################
+#### Keep slash ("/") at the beginning,        ##
+#### if you want to ignore only the root item. ##
+#################################################
 
-caches/
-crons/**/error_log
-errors/
+.DS_Store
 
-uploads/files/*
-uploads/design/*
-uploads/*/*
-!uploads/files/.htaccess
-!uploads/design/.htaccess
+/.vscode/*
+!/.vscode/sftp.json.example
 
-vendor/
+/caches/
+/crons/**/error_log
+/errors/
 
-.env.local
+/uploads/*/*
 
-.gitmodules
-.ftpquota
-error_log
+/vendor
+
+/.env.local
+
+/.gitmodules
+/.ftpquota
+/error_log

@@ -1,0 +1,11 @@
+{
+    "js": {
+        "files": {
+            "header": {
+                "vendor/arshwell/monolith/resources": [
+                    "clipboard/v2"
+                ]
+            }
+        }
+    }
+}

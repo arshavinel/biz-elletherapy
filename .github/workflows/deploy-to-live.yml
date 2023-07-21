@@ -69,11 +69,8 @@ jobs:
               .well-known/*
               caches/*
               cgi-bin/*
-              uploads/files/*
-              uploads/design/*
               uploads/*/*
-              !uploads/files/.htaccess
-              !uploads/design/.htaccess
+              !uploads/.htaccess
               .ftpquota
               .gitignore
               .gitmodules

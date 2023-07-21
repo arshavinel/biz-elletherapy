@@ -1,4 +1,9 @@
 {
-    "scss": {},
-    "js": {}
+    "scss": {
+        "files": {
+            "resources": [
+                "plugins/bootstrap/v4"
+            ]
+        }
+    }
 }

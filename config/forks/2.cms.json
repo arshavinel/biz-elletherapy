@@ -50,27 +50,33 @@
 		"categories":	["GET|AJAX",	"cms/blog/categorii/[page]"]
 	},
 
+    "identity": {
+		"logos":        ["GET|AJAX",	"cms/identitate/logo-uri/[page]"],
+		"social-media": ["GET|AJAX",	"cms/identitate/social-media/[page]"]
+    },
+
 	"content": {
-		"ajax": {
-			"logos": {
-				"visible":   ["AJAX",	"cms/continut/ajax/logo-uri/vizibil"]
-			}
-		},
-		"logos":	["GET|AJAX",	"cms/continut/logo-uri/[page]"],
-		"views": {
-			"ajax": {
-				"update":   ["AJAX",	"cms/continut/vizualuri/update"]
-			},
-			"pages": {
-				"all":		["GET",		"cms/continut/vizualuri/pagini/[page]"],
-				"show":     ["GET",		"cms/continut/vizualuri/pagina/[id:i]/[slug:*]"]
-			},
-			"general": {
-				"all":      ["GET",		"cms/continut/vizualuri/globale/[page]"],
-				"show":     ["GET",		"cms/continut/vizualuri/global/[id:i]"]
-			}
-		},
-		"social-media":		["GET|AJAX",	"cms/continut/social-media/[page]"]
+        "pages": {
+            "all":  ["GET", "cms/content/pages/[page]"],
+            "show": ["GET", "cms/content/page/[id:i]/[slug:*]"]
+        },
+        "general": {
+            "all":  ["GET", "cms/content/global/[page]"],
+            "show": ["GET", "cms/content/global/[id:i]"]
+        }
+	},
+
+    "cms": {
+        "content": {
+            "pages": {
+                "all":  ["GET", "cms/cms/content/pages/[page]"],
+                "show": ["GET", "cms/cms/content/page/[id:i]/[slug:*]"]
+            },
+            "general": {
+                "all":  ["GET", "cms/cms/content/global/[page]"],
+                "show": ["GET", "cms/cms/content/global/[id:i]"]
+            }
+        }
 	},
 
 	"config": {
@@ -108,10 +114,16 @@
 				"hidden":	["AJAX",	"cms/ajax/comparare/caracteristici/ascunsa"]
 			}
 		},
-        "content": {
+        "identity": {
+            "logos": {
+				"visible":   ["AJAX",	"cms/continut/ajax/logo-uri/vizibil"]
+			},
 			"social-media": {
 				"visible":	["AJAX",	"cms/ajax/content/social-media/visible"]
 			}
-		}
+		},
+        "content": {
+            "update": ["AJAX", "cms/ajax/content/update"]
+        }
 	}
 }

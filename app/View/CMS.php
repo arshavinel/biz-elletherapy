@@ -9,7 +9,7 @@ use Arshavinel\ElleTherapy\Table\Account\Admin\Profile;
 
 class CMS extends TableView {
     const TABLE         = 'views_cms';
-    const PRIMARY_KEY   = 'id_view_cms';
+    const PRIMARY_KEY   = 'id_view';
 
     const TRANSLATOR    = LangCMS::class;
 

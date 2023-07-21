@@ -1,11 +1,11 @@
 ## Should stay in root of the project ##
 
-RewriteOptions InheritBefore
-RewriteEngine On
-
 # use php7.4
 <FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
     SetHandler application/x-httpd-alt-php74___lsphp
 </FilesMatch>
 
-RewriteRule ^ index.php
+RewriteOptions inherit
+RewriteEngine On
+
+RewriteRule ^ index.php [END,L]

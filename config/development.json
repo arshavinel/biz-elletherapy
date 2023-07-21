@@ -5,7 +5,7 @@
         "My Personal IP": "%env(DEV_IPS_MINE)%",
 
         "Arșavin":     {
-            "Lujerului":"79.115.139.99",
+            "Lujerului":"86.121.4.62",
             "Aviației": "5.12.119.87"
         }
     },

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3acc44caaf85cb27cd67fa7efb27dc66",
+    "content-hash": "c6759a2428c12351c407840ab342e2f1",
     "packages": [
         {
             "name": "arshwell/monolith",
-            "version": "v0.3.6",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/arshwell/monolith.git",
-                "reference": "e7b8b36064a04f887765bcaec7a91d7c0dec0d5d"
+                "reference": "6f40826ccff41e6c154ac4052e261ac237b817c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arshwell/monolith/zipball/e7b8b36064a04f887765bcaec7a91d7c0dec0d5d",
-                "reference": "e7b8b36064a04f887765bcaec7a91d7c0dec0d5d",
+                "url": "https://api.github.com/repos/arshwell/monolith/zipball/6f40826ccff41e6c154ac4052e261ac237b817c0",
+                "reference": "6f40826ccff41e6c154ac4052e261ac237b817c0",
                 "shasum": ""
             },
             "require": {
@@ -56,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/arshwell/monolith/issues",
-                "source": "https://github.com/arshwell/monolith/tree/v0.3.6"
+                "source": "https://github.com/arshwell/monolith/tree/v0.4.3"
             },
-            "time": "2023-05-21T22:38:47+00:00"
+            "time": "2023-06-15T18:11:44+00:00"
         },
         {
             "name": "firebase/php-jwt",

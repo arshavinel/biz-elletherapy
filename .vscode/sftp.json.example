@@ -8,7 +8,7 @@
     "remotePath":   "/elletherapy/",
     "ignore":       [
         ".vscode/*", ".git/*", ".well-known/*", "cgi-bin/*", "vendor/**/.git/*",
-        "caches/*", "uploads/*", "!uploads/files/.htaccess", "!uploads/design/.htaccess",
+        "caches/*", "uploads/*/*", "!uploads/.htaccess",
         ".ftpquota", ".gitignore", ".gitmodules"
     ],
     "uploadOnSave": true
