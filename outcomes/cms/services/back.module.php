@@ -71,7 +71,7 @@ return array(
             ),
             'PHP' => array(
                 'rules' => array(
-                    "required|minLength:4"
+                    "minLength:4"
                 )
             )
         ),

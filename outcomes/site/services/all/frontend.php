@@ -25,6 +25,14 @@
     </div>
 </div>
 
+<?= Arshwell\Monolith\Piece::html('site/services', array(
+    'homepage' => false,
+    'button' => array(
+        'link' => Arshwell\Monolith\Web::url('site.appoint'),
+        'text' => Arshavinel\ElleTherapy\View\Site::sentence('servicii.link.text')
+    )
+)) ?>
+
 <div class="bg-color-2">
     <div class="container text-color-7 padding-4th-4th padding-md-2nd-2nd text-center">
         <?= Arshavinel\ElleTherapy\View\Site::content('box.industries.text') ?>
@@ -34,14 +42,6 @@
 <div class="padding-6th-0 padding-sm-3rd-3rd">
     <?= Arshwell\Monolith\Piece::html('site/industry-comparison') ?>
 </div>
-
-<?= Arshwell\Monolith\Piece::html('site/services', array(
-    'homepage' => false,
-    'button' => array(
-        'link' => Arshwell\Monolith\Web::url('site.appoint'),
-        'text' => Arshavinel\ElleTherapy\View\Site::sentence('servicii.link.text')
-    )
-)) ?>
 
 <div class="bg-color-2">
     <div class="container text-color-7 padding-4th-4th padding-md-2nd-2nd text-center">
