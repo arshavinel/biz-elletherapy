@@ -7,15 +7,6 @@ body {
 		.shadow {
 			@include arsh--box-shadow(0px 0px 10px -2px #707070);
 		}
-		form {
-			input:not([type="checkbox"]), textarea {
-				border: 1px solid map-get($site-colors, 4);
-			}
-
-			textarea {
-				max-height: 200px;
-			}
-		}
 		.media {
 			img {
 				width: 40px;
